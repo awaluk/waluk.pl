@@ -13,25 +13,25 @@ a:hover {
 }
 
 .container {
-    width: 1500px;
+    width: 1300px;
     margin: 0 auto;
 }
 
 @media screen and (max-width: 1700px) {
     .container {
-        width: 1100px;
+        width: 900px;
     }
 }
 
 @media screen and (max-width: 1120px) {
     .container {
-        width: 900px;
+        width: 700px;
     }
 }
 
 @media screen and (max-width: 950px) {
     .container {
-        width: 800px;
+        width: 500px;
     }
 }
 
@@ -157,28 +157,25 @@ a:hover {
     margin-top: 4px;
 }
 
-.abilities {
+.skills {
     list-style-type: none;
     margin: 0;
     padding: 0;
     font-size: 14px;
 }
 
-.abilities__item {
+.skills__item {
     display: inline-block;
     border: 1px solid #3384b4;
     margin: 0 10px 15px 0;
     padding: 8px 12px;
 }
 
-.contact:after {
-    content: '';
-    display: block;
-    clear: both;
+.contact__link {
+    display: inline-block;
 }
 
 .contact__item {
-    float: left;
     margin: 5px 30px 10px 0;
 }
 
@@ -230,6 +227,15 @@ a:hover {
 }
 
 @media screen and (max-width: 360px) {
+    .contact__link {
+        display: block;
+        text-align: center;
+    }
+
+    .contact__item {
+        margin: 20px 10px;
+    }
+
     .home__box {
         position: absolute;
         top: 60%;

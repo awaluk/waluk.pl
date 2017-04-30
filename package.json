@@ -1,0 +1,26 @@
+{
+  "name": "waluk-homepage",
+  "version": "1.0.0",
+  "description": "Simple page about me",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awaluk/waluk-homepage.git"
+  },
+  "keywords": [
+    "homepage",
+    "about-me"
+  ],
+  "author": "Arkadiusz Waluk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awaluk/waluk-homepage/issues"
+  },
+  "homepage": "https://waluk.pl",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minifier": "^0.2.2"
+  }
+}

@@ -118,7 +118,7 @@ a:hover {
 }
 
 .home {
-    background: url('/images/background.jpg') center no-repeat;
+    background: url('/images/background.jpg') no-repeat fixed center;
     background-size: cover;
     height: 100vh;
     text-align: center;

@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+  www:
+    build: docker/www/
+    ports:
+      - 80:80
+    volumes:
+      - ".:/var/www/html:rw"

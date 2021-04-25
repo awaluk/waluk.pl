@@ -1,0 +1,48 @@
+.content {
+    & a {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    & hr {
+        border: 1px solid $primary-color;
+    }
+
+    code.highlighter-rouge {
+        color: $primary-color;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 6px;
+        }
+    }
+}
+
+.box-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+
+    &__item {
+        border: 1px solid $primary-color;
+        margin: 0 10px 15px 0;
+        padding: 8px 12px;
+    }
+}
+

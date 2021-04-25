@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<html lang="{{ language is defined ? language : 'pl' }}" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock title %} | {{ site.name }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="author" content="Arkadiusz Waluk">
+    <meta name="description" content="{% block description %}{% endblock %}">
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:url" content="{{ app.request.pathinfo }}">
+    <meta property="og:title" content="{{ block('title') }} | {{ site.name }}">
+    <meta property="og:description" content="{{ block('description') }}">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="">
+    <meta property="og:image:height" content="">
+{#    {% if page.layout == 'post' %}#}
+{#        <meta property="og:type" content="article">#}
+{#        <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">#}
+{#    {%- else -%}#}
+{#        <meta property="og:type" content="website">#}
+{#    {% endif %}#}
+{#    {% if page.language == 'en' %}#}
+{#        <meta property="og:locale" content="en_US">#}
+{#    {%- else -%}#}
+{#        <meta property="og:locale" content="pl_PL">#}
+{#    {% endif %}#}
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="@">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href=""> <!-- TODO -->
+    {{ encore_entry_link_tags('app') }}
+
+    {% if app.environment == 'prod' and site.google_analytics_id is not empty %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ site.google_analytics_id }}');
+        </script>
+    {% endif %}
+</head>
+<body>
+    {% include 'includes/header.html.twig' %}
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'includes/footer.html.twig' %}
+    {{ encore_entry_script_tags('app') }}
+</body>
 </html>

@@ -1,0 +1,34 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $background-primary-color;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+
+    &--error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 40vh;
+    }
+
+    @media (max-width: $breakpoint-xl) {
+        width: 960px;
+    }
+    @media (max-width: $breakpoint-lg) {
+        width: 720px;
+    }
+    @media (max-width: $breakpoint-md) {
+        width: 540px;
+    }
+    @media (max-width: $breakpoint-sm) {
+        width: 100%;
+    }
+}

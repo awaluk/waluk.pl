@@ -1,3 +1,16 @@
 page_index:
     path: /
     controller: App\Controller\PageController::index
+page_about:
+    path: /o-mnie
+    controller: App\Controller\PageController::about
+page_contact:
+    path: /kontakt
+    controller: App\Controller\PageController::contact
+page_english:
+    path: /english
+    controller: App\Controller\PageController::english
+
+blog_index:
+    path: /blog
+    controller: App\Controller\BlogController::index

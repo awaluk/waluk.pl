@@ -1,0 +1,31 @@
+.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    padding: 0;
+
+    &__item {
+        border-width: 1px 0 1px 1px;
+        border-color: $primary-color;
+        border-style: solid;
+
+        &:last-child {
+            border-right: 1px solid $primary-color;
+        }
+    }
+
+    &__link {
+        display: block;
+        min-width: 30px;
+        text-align: center;
+        padding: 8px 4px;
+        text-decoration: none;
+        color: $text-primary-color;
+
+        &--active, &:hover {
+            background: $primary-color;
+            color: $text-secondary-color;
+        }
+    }
+}

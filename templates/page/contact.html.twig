@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kontakt{% endblock %}
+{% block description %}{% endblock %}
+
+{% block content %}
+    <article class="content">
+        <div class="section">
+            <div class="container">
+                <h1 class="section__main-title">Kontakt</h1>
+                <p>Jestem aktywny w wielu miejscach w internecie, między innymi:</p>
+                <ul>
+                    <li><a href="https://www.instagram.com/{{ site.social.instagram }}/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/{{ site.social.facebook }}">Facebook</a></li>
+                    <li><a href="https://github.com/{{ site.social.github }}">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/arkadiusz-waluk/">LinkedIn</a></li>
+                    <li><a href="https://forum.pasja-informatyki.pl/user/Arkadiusz+Waluk">Forum Pasja Informatyki</a></li>
+                </ul>
+                <p>Zachęcam do obserwowania, polubienia, subskrybowania… :)</p>
+            </div>
+        </div>
+
+        <section class="section section--dark">
+            <div class="container">
+                <h2 id="pytania" class="section__title">Pytania?</h2>
+                <p>Jeżeli masz pytanie lub chcesz podzielić się uwagą co do danego wpisu na blogu, napisz w komentarzu. To najlepsze miejsce, gdzie możemy podyskutować. Daj znać co myślisz, chętnie poznam Twoją opinię, która może pomóc mi tworzyć coraz lepsze materiały.</p>
+                <p>Na inne programistyczne pytania odpowiedź możesz uzyskać przykładowo na forum informatycznym, na którym często się udzielam -
+                    <a href="https://forum.pasja-informatyki.pl">Forum Pasja Informatyki</a>. W miejscach tego typu najprościej będzie otrzymać wsparcie. Przed zapytaniem innych, sprawdź wszystko co możesz samemu, w tym przeszukaj Google. Prosząc gdziekolwiek o pomoc nie zapomnij dokładnie opisać co nie działa, co zrobiłeś, pokazać kodu (jeśli jest) i treści błędu, gdy występuje.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 id="email" class="section__title">E-mail</h2>
+                <p>Do bezpośredniego kontaktu zapraszam w sprawach wszelkich ofert pracy i współpracy, ewentualnie zgłoszenia błędów w moich materiałach czy przekazania innych ważnych sugestii. Na wszystkie wiadomości postaram się odpowiedzieć możliwie najszybciej.</p>
+                <p>Na ten moment nie zajmuję się realizacją zleceń na stworzenie strony ani podobnymi. Nie odrabiam zadań, nie udzielam indywidualnych lekcji. Nie pomagam rozwiązywać problemów (nieskierowanych bezpośrednio do mnie) przez e-maile ani różnego rodzaju wiadomości prywatne. Przede wszystkim nie znam się na każdej dziedzinie, więc powierzając daną kwestię tylko mi, zmniejszasz sobie szansę na uzyskanie pomocy. Ponadto każdy z nas ma ograniczony czas i nie byłbym w stanie odpowiedzieć na wszystkie takie pytania.</p>
+                <p>E-mail: {{ site.email }}</p>
+            </div>
+        </section>
+    </article>
+{% endblock %}

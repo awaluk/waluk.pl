@@ -4,6 +4,14 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    site:
+        name: Arkadiusz Waluk
+        email: kontakt@waluk.pl
+        google_analytics_id: UA-75292837-1
+        social:
+            github: awaluk
+            facebook: walukpl
+            instagram: walukpl
 
 services:
     # default configuration for services in *this* file

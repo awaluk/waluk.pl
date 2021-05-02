@@ -7,3 +7,17 @@ services:
       - 80:80
     volumes:
       - ".:/var/www/html:rw"
+    links:
+      - database
+
+  database:
+    image: mysql:8.0.24
+    ports:
+      - 3306:3306
+    volumes:
+      - "./docker/mysql/database.sql:/docker-entrypoint-initdb.d/database.sql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=walukpl
+      - MYSQL_USER=walukpl
+      - MYSQL_PASSWORD=walukpl

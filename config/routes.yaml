@@ -14,3 +14,14 @@ page_english:
 blog_index:
     path: /blog
     controller: App\Controller\BlogController::index
+blog_category:
+    path: /blog/{categorySlug}
+    controller: App\Controller\BlogController::category
+    requirements:
+        categorySlug: '[a-zA-Z0-9-]+'
+blog_post:
+    path: /blog/{categorySlug}/{postSlug}
+    controller: App\Controller\BlogController::post
+    requirements:
+        categorySlug: '[a-zA-Z0-9-]+'
+        postSlug: '[a-zA-Z0-9-]+'

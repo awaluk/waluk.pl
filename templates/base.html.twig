@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="author" content="Arkadiusz Waluk">
     <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="theme-color" content="">
 
     <meta property="og:site_name" content="{{ site.name }}">
-    <meta property="og:url" content="{{ app.request.pathinfo }}">
+    <meta property="og:url" content="{{ absolute_url(app.request.pathinfo) }}">
     <meta property="og:title" content="{{ block('title') }} | {{ site.name }}">
     <meta property="og:description" content="{{ block('description') }}">
     <meta property="og:image" content="">

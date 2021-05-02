@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+    <nav class="blog-nav">
+        <div class="container">
+            <ul class="blog-nav__list">
+{#                {%- for item in site.data.categories -%}#}{# todo #}
+                    <li class="blog-nav__item"><a href="/blog//" class="blog-nav__link">Kategoria 1</a></li>
+                    <li class="blog-nav__item"><a href="/blog//" class="blog-nav__link">Kategoria 2</a></li>
+{#                {%- endfor -%}#}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="post">
+            <header class="post__header">
+                <h1 class="post__title">{{ post.title }}</h1>
+                <img src="{{ asset('posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.png') }}" alt="" class="post__image">
+                <div class="post__info">
+                    <div>
+                        Kategoria: <a href="{{ url('blog_category', {categorySlug: category.slug}) }}" class="post__info-link">{{ category.name }}</a> &bullet;
+                        Dodano: <time datetime="{{ post.date|date('c') }}">{{ post.date|date('d.m.Y H:i') }}</time>
+                    </div>
+                    <div class="post__info-actions">
+                        Udostępnij:
+                        <div class="top-social">
+                            <ul class="top-social__list">
+                                <li class="top-social__item">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ absolute_url(app.request.pathinfo) }}" target="_blank" class="top-social__link" title="Udostępnij wpis na Facebooku"><img src="{{ asset('build/images/facebook.png') }}" alt="Czarno-białe logo Facebooka" class="top-social__icon"></a>
+                                </li>
+                            </ul>
+                        </div>
+{#                        {% if page.comments != false %}#}
+                            &bullet;&nbsp;<a href="#komentarze" class="post__info-link" title="Przejdź do komentarzy">Komentarze: 11</a>
+{#                        {% endif %}#}
+                    </div>
+                </div>
+            </header>
+            <div class="post__body">
+                <div class="post__content content">
+                    {{ post.content_html }}
+
+{#                    {% if page.comments != false %}#}
+                        <section class="" id="komentarze">
+                            <h2>Komentarze</h2>
+                            <!-- TODO disqus -->
+                        </section>
+{#                    {% endif %}#}
+                </div>
+                <aside class="post__sidebar">
+                    <!-- TODO sidebar -->
+                </aside>
+            </div>
+        </article>
+    </div>
+{% endblock %}

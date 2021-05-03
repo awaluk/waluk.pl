@@ -12,6 +12,12 @@ parameters:
             github: awaluk
             facebook: walukpl
             instagram: walukpl
+    parser:
+        html_input: escape
+        external_link:
+            open_in_new_window: true
+            noreferrer: external
+            noopener: external
 
 services:
     # default configuration for services in *this* file
@@ -37,3 +43,6 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    League\CommonMark\CommonMarkConverter:
+        factory: ['App\Parser\ParserFactory', 'createCommonMark']
+        arguments: ['%parser%']

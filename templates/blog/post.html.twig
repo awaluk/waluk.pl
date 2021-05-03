@@ -43,7 +43,7 @@
             </header>
             <div class="post__body">
                 <div class="post__content content">
-                    {{ post.content_html }}
+                    {{ post.content_html|raw }}
 
 {#                    {% if page.comments != false %}#}
                         <section class="" id="komentarze">

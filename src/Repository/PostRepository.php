@@ -8,7 +8,7 @@ class PostRepository extends BaseRepository
 {
     protected string $table = 'posts';
 
-    public function getPosts(int $categoryId = null)
+    public function getPosts(int $categoryId = null): array
     {
         $query = $this->connection->createQueryBuilder()
             ->select(['p.title', 'p.slug', 'p.date', 'p.description'])
@@ -25,7 +25,7 @@ class PostRepository extends BaseRepository
         return $query->fetchAllAssociative();
     }
 
-    public function getPost(string $slug, int $categoryId = null)
+    public function getPost(string $slug, int $categoryId = null): ?array
     {
         $query = $this->connection->createQueryBuilder()
             ->setMaxResults(1)
@@ -39,5 +39,33 @@ class PostRepository extends BaseRepository
         $result = $query->fetchAssociative();
 
         return $result === false ? null : $result;
+    }
+
+    public function create(array $data): bool
+    {
+        $query = $this->connection->createQueryBuilder()
+            ->insert($this->table);
+        $number = 0;
+        foreach ($data as $field => $value) {
+            $query->setValue($field, '?')->setParameter($number, $value);
+            $number++;
+        }
+
+        return $query->executeStatement() === 1;
+    }
+
+    public function update(int $id, array $data): bool
+    {
+        $query = $this->connection->createQueryBuilder()
+            ->update($this->table)
+            ->where('id = :id')
+            ->setParameter('id', $id);
+        $number = 0;
+        foreach ($data as $field => $value) {
+            $query->set($field, '?')->setParameter($number, $value);
+            $number++;
+        }
+
+        return $query->executeStatement() === 1;
     }
 }

@@ -1,4 +1,12 @@
+import hljs from 'highlight.js/lib/core';
+import php from 'highlight.js/lib/languages/php';
+import 'highlight.js/styles/darcula.css';
+
+import 'normalize.css/normalize.css';
 import './styles/app.scss';
+
+hljs.registerLanguage('php', php);
+hljs.highlightAll();
 
 const classOpen = 'header__navigation--open';
 const header = document.querySelector('#header');

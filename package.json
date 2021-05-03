@@ -3,6 +3,8 @@
         "@symfony/webpack-encore": "^1.0.0",
         "core-js": "^3.0.0",
         "file-loader": "^6.0.0",
+        "highlight.js": "^10.7.2",
+        "normalize.css": "^8.0.1",
         "regenerator-runtime": "^0.13.2",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.0",

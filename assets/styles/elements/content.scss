@@ -1,5 +1,5 @@
 .content {
-    & a {
+    a {
         color: $primary-color;
         text-decoration: none;
 
@@ -12,21 +12,52 @@
         max-width: 100%;
     }
 
-    & hr {
+    hr {
         border: 1px solid $primary-color;
     }
 
-    code.highlighter-rouge {
-        color: $primary-color;
+    .small-code {
+        background: $background-secondary-color;
+        color: #bababa;
+        padding: 2px;
     }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
+    .hljs {
+        background: $background-secondary-color;
+    }
 
-        th, td {
-            border: 1px solid #aaa;
-            padding: 6px;
+    blockquote {
+        font-style: italic;
+        border-left: 2px solid $primary-color;
+        color: $addons-color;
+        margin-left: 10px;
+        margin-right: 0;
+        padding: 1px 0 1px 15px;
+    }
+
+    ul, ol {
+        margin-left: 10px;
+        padding-left: 15px;
+    }
+
+    li {
+        margin: 7px 0;
+    }
+
+    h1 {
+        font-weight: normal;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .header-link {
+        color: $text-primary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
@@ -46,3 +77,11 @@
     }
 }
 
+.block {
+    padding: 1px 15px;
+
+    &--info {
+        background: $background-secondary-color;
+        color: $text-secondary-color;
+    }
+}

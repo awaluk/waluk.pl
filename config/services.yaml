@@ -12,6 +12,7 @@ parameters:
             github: awaluk
             facebook: walukpl
             instagram: walukpl
+            twitter: ArkadiuszWaluk
     parser:
         html_input: escape
         external_link:

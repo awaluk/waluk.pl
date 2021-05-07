@@ -12,7 +12,6 @@ CREATE TABLE posts (
     `title` VARCHAR(255) NOT NULL,
     `slug` VARCHAR(255) NOT NULL UNIQUE,
     `description` TEXT,
-    `keywords` TEXT,
     `main_image_alt` TEXT,
     `content_md` TEXT,
     `content_html` TEXT

@@ -1,17 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}O mnie{% endblock %}
-{% block description %}{% endblock %}
-{% block keywords %}{% endblock %}
+{% block description %}Informacje o autorze. Wyróżnienie najważniejszych umiejętności z dziedziny IT. Historia rozpoczęcia przygody z programowaniem.{% endblock %}
 
 {% block content %}
     <article class="main__content">
         <div class="section">
             <div class="container">
-                <h1 class="section__main-title">O mnie</h1>
+                <h1 class="section__main-title">{{ block('title') }}</h1>
                 <p>Nazywam się Arkadiusz Waluk. Jestem <strong>programistą z kilkuletnim stażem</strong> oraz pasjonatem nowych technologii. Zajmuję się głównie szeroko pojętym web developmentem, z największym naciskiem na PHP.</p>
-                <p>Od dziecka interesowałem się komputerami. Ukończyłem technikum, zdobywając tytuł technika informatyka. Obecnie pracuję jako <strong>programista PHP</strong>, ale zdarza mi się także zajmować innymi zagadnieniami: frontendem, administracją serwerami i podobnymi.</p>
-                <p>Po godzinach z przyjemnością kontynuuję rozwój, szukam nowych możliwości oraz poszerzam wiedzę. Jestem administratorem <a href="https://forum.pasja-informatyki.pl" rel="noopener">Forum Pasja Informatyki</a>, gdzie pomagam innym i zarządzam dalszym rozwojem tego miejsca. Tworzę także internetowy kurs <a href="https://www.phpdevs.pl" rel="noopener">PHPDevs</a>, w którym uczę programowania w PHP od podstaw.</p>
+                <p>Od dziecka interesowałem się komputerami. Ukończyłem technikum, zdobywając tytuł technika informatyka. Obecnie pracuję jako <strong>programista PHP</strong>, ale zdarza mi się także zajmować innymi zagadnieniami: frontendem, administracją serwerami i podobnymi.</p>
+                <p>Po godzinach z przyjemnością kontynuuję rozwój, szukam nowych możliwości oraz poszerzam wiedzę. Jestem administratorem <a href="https://forum.pasja-informatyki.pl" rel="noopener">Forum Pasja Informatyki</a>, gdzie pomagam innym i zarządzam dalszym rozwojem tego miejsca. Tworzę także internetowy kurs <a href="https://www.phpdevs.pl" rel="noopener">PHPDevs</a>, w którym uczę programowania w PHP od podstaw.</p>
             </div>
         </div>
 
@@ -53,8 +52,8 @@
         <section class="section">
             <div class="container">
                 <h2 id="troche-zyciowej-historii" class="section__title">Trochę życiowej historii…</h2>
-                <p>Jak wspomniałem, od zawsze ciągnęło mnie do komputerów. Zainteresowanie programowaniem pojawiło się u mnie gdzieś <strong>pod koniec szkoły podstawowej</strong>. Poznałem wtedy program GameMaker i zacząłem się nim „bawić”, mając w głowie jak dużo mógłbym zrobić. Szybko zorientowałem się jednak, że to nie takie proste, a samo wspomniane oprogramowanie nakładało zbyt wiele ograniczeń, choć pewnie było też zbyt mało właściwego myślenia i wiedzy w mojej głowie. Postanowiłem spróbować czegoś poważniejszego: zacząłem uczyć się języka C++. Ten niestety dość szybko mnie odstraszył, był zbyt dużym skokiem jak na tamten sposób mojego rozumowania.</p>
-                <p>Później trafiłem na tworzenie <strong>stron internetowych</strong>. Zacząłem poznawać podstawy HTML i CSS, dalej doszedł JavaScript oraz PHP. Idąc do technikum byłem już pewien, że chcę być programistą i tworzyć strony internetowe. Z czasem coraz bardziej się rozwijałem, nabierając wiedzy i pewności w tej dziedzinie. Uznałem też, że lepiej czuję się <strong>na backendzie</strong>, zapewne dlatego, że do kwestii wizualnych/graficznych brakuje mi „oka”, wyczucia. Tym sposobem pozostałem przy PHP i tak oto z zadowoleniem działam w nim do dziś.</p>
+                <p>Jak wspomniałem, od zawsze ciągnęło mnie do komputerów. Zainteresowanie programowaniem pojawiło się u mnie gdzieś <strong>pod koniec szkoły podstawowej</strong>. Poznałem wtedy program GameMaker i zacząłem się nim „bawić”, mając w głowie jak dużo mógłbym zrobić. Szybko zorientowałem się jednak, że to nie takie proste, a samo wspomniane oprogramowanie nakładało zbyt wiele ograniczeń, choć pewnie było też zbyt mało właściwego myślenia i wiedzy w mojej głowie. Postanowiłem spróbować czegoś poważniejszego: zacząłem uczyć się języka C++. Ten niestety dość szybko mnie odstraszył, był zbyt dużym skokiem jak na tamten sposób mojego rozumowania.</p>
+                <p>Później trafiłem na tworzenie <strong>stron internetowych</strong>. Zacząłem poznawać podstawy HTML i CSS, dalej doszedł JavaScript oraz PHP. Idąc do technikum byłem już pewien, że chcę być programistą i tworzyć strony internetowe. Z czasem coraz bardziej się rozwijałem, nabierając wiedzy i pewności w tej dziedzinie. Uznałem też, że lepiej czuję się <strong>na backendzie</strong>, zapewne dlatego, że do kwestii wizualnych/graficznych brakuje mi „oka”, wyczucia. Tym sposobem pozostałem przy PHP i tak oto z zadowoleniem działam w nim do dziś.</p>
             </div>
         </section>
     </article>

@@ -5,7 +5,9 @@
         font-weight: normal;
 
         &--blog {
-            padding: 0 $full-width-padding;
+            @media (max-width: $breakpoint-sm) {
+                padding: 0 $full-width-padding;
+            }
         }
     }
 

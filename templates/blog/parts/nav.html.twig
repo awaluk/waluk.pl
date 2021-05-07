@@ -1,0 +1,9 @@
+<nav class="blog-nav">
+    <div class="container">
+        <ul class="blog-nav__list">
+            {% for category in categories %}
+                <li class="blog-nav__item"><a href="{{ url('blog_category', {categorySlug: category.slug}) }}" class="blog-nav__link">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

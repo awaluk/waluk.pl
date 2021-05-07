@@ -4,9 +4,11 @@
             <section class="footer__box">
                 <h3 class="footer__header">Blog - kategorie</h3>
                 <ul class="footer__list">
-                    <li class="footer__item">
-                        <a href="/blog/" class="footer__link">test</a>
-                    </li>
+                    {% for category in categories %}
+                        <li class="footer__item">
+                            <a href="{{ path('blog_category', {categorySlug: category.slug}) }}" class="footer__link">{{ category.name }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </section>
 

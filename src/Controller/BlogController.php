@@ -49,4 +49,13 @@ class BlogController extends AbstractController
             'post' => $post
         ]);
     }
+
+    public function navPart()
+    {
+        $categories = $this->categoryRepository->getCategories();
+
+        return $this->render('blog/parts/nav.html.twig', [
+            'categories' => $categories
+        ]);
+    }
 }

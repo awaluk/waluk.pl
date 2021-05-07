@@ -42,7 +42,6 @@ class PostLoader
             'title' => $meta['title'],
             'slug' => $slug,
             'description' => $meta['description'] ?? null,
-            'keywords' => $meta['keywords'] ?? null,
             'main_image_alt' => $meta['main_image_alt'] ?? null,
             'content_md' => $mdContent,
             'content_html' => $htmlContent

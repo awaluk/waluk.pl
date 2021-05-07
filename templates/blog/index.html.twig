@@ -1,23 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blog{% endblock %}
-{% block description %}{% endblock %}
-{% block keywords %}{% endblock %}
+{% block title %}Blog - najnowsze posty{% endblock %}
+{% block description %}Najnowsze posty na blogu informatycznym Arkadiusza Waluka. {% endblock %}
 
 {% block content %}
-    <nav class="blog-nav">
-        <div class="container">
-            <ul class="blog-nav__list">
-{#                {%- for item in site.data.categories -%}#}{# todo #}
-                    <li class="blog-nav__item"><a href="/blog//" class="blog-nav__link">Kategoria 1</a></li>
-                    <li class="blog-nav__item"><a href="/blog//" class="blog-nav__link">Kategoria 2</a></li>
-{#                {%- endfor -%}#}
-            </ul>
-        </div>
-    </nav>
+    {{ render(controller('App\\Controller\\BlogController::navPart')) }}
 
     <div class="container">
-        <h1 class="main__title main__title--blog">Blog - najnowsze posty</h1>
+        <h1 class="main__title main__title--blog">{{ block('title') }}</h1>
         {% for post in posts %}
             <article class="post-list">
                 <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-list__image-link">

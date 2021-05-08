@@ -53,13 +53,17 @@
         }
     }
 
+    &__info-base {
+        font-weight: bold;
+    }
+
     &__info-actions {
         display: flex;
         align-items: center;
     }
 
     &__info-link {
-        color: $addons-color;
+        color: #000;
         text-decoration: none;
 
         &:hover, &:focus {

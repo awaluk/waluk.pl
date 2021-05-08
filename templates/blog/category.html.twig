@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blog - najnowsze posty{% endblock %}
-{% block description %}Najnowsze posty na blogu informatycznym Arkadiusza Waluka. Główne tematy to programowanie, strony internetowe, rozwój, ale jest tu także miejsce na luźne przemyślenia.{% endblock %}
+{% block title %}Blog - kategoria: {{ category.name }}{% endblock %}
+{% block description %}Wszystkie wpisy z kategorii {{ category.name }} na blogu Arkadiusza Waluka.{% endblock %}
 
 {% block content %}
     {{ render(controller('App\\Controller\\BlogController::navPart')) }}

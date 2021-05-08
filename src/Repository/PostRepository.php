@@ -8,21 +8,39 @@ class PostRepository extends BaseRepository
 {
     protected string $table = 'posts';
 
-    public function getPosts(int $categoryId = null): array
+    public function getPosts(int $from = null, int $limit = null, int $categoryId = null): array
     {
         $query = $this->connection->createQueryBuilder()
             ->select(['p.title', 'p.slug', 'p.date', 'p.description'])
+            ->addSelect(['c.name as category_name', 'c.slug as category_slug'])
+            ->join('p', 'categories', 'c', 'p.category_id = c.id')
             ->from($this->table, 'p')
-            ->orderBy('date', 'desc');
+            ->orderBy('p.date', 'desc');
+
         if ($categoryId !== null) {
             $query->where('p.category_id = :category')->setParameter('category', $categoryId);
-        } else {
-            $query->addSelect(['c.name as category_name', 'c.slug as category_slug'])
-                ->join('p', 'categories', 'c', 'p.category_id = c.id');
+        }
+        if ($from !== null) {
+            $query->setFirstResult($from);
+        }
+        if ($limit !== null) {
+            $query->setMaxResults($limit);
         }
         $query->executeQuery();
 
         return $query->fetchAllAssociative();
+    }
+
+    public function countPosts(int $categoryId = null): int
+    {
+        $query = $this->connection->createQueryBuilder()
+            ->select('COUNT(p.id)')
+            ->from($this->table, 'p');
+        if ($categoryId !== null) {
+            $query->where('p.category_id = :category')->setParameter('category', $categoryId);
+        }
+
+        return (int)$query->fetchOne();
     }
 
     public function getPost(string $slug, int $categoryId = null): ?array

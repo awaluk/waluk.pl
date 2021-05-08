@@ -1,0 +1,21 @@
+{% if paginator.totalPages > 1 %}
+    <ul class="pagination">
+        {% if paginator.previousPage %}
+            <li class="pagination__item">
+                <a href="{{ page_path(paginator.previousPage, category.slug ?? null) }}" class="pagination__link" title="Poprzednia strona">&laquo;</a>
+            </li>
+        {% endif %}
+
+        {% for page in paginator.pagesRange(2) %}
+            <li class="pagination__item">
+                <a href="{{ page_path(page, category.slug ?? null) }}" class="pagination__link {% if page == paginator.currentPage %}pagination__link--active{% endif %}" title="Strona {{ page }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if paginator.nextPage %}
+            <li class="pagination__item">
+                <a href="{{ page_path(paginator.nextPage, category.slug ?? null) }}" class="pagination__link" title="Następna strona">&raquo;</a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

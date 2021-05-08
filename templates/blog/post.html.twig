@@ -13,9 +13,9 @@
                 <h1 class="post__title">{{ block('title') }}</h1>
                 <img src="{{ asset('posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.png') }}" alt="{{ post.main_image_alt }}" class="post__image">
                 <div class="post__info">
-                    <div>
+                    <div class="post__info-base">
                         Kategoria: <a href="{{ url('blog_category', {categorySlug: category.slug}) }}" class="post__info-link">{{ category.name }}</a> &bullet;
-                        Dodano: <time datetime="{{ post.date|date('c') }}">{{ post.date|date('d.m.Y H:i') }}</time>
+                        Dodano: <time datetime="{{ post.date|date('c') }}">{{ post.date|date('d.m.Y') }}</time>
                     </div>
                     <div class="post__info-actions">
                         Udostępnij:

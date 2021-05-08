@@ -14,11 +14,22 @@ page_english:
 blog_index:
     path: /blog
     controller: App\Controller\BlogController::index
+blog_index_page:
+    path: /blog/strona-{page}
+    controller: App\Controller\BlogController::index
+    requirements:
+        page: \d+
 blog_category:
     path: /blog/{categorySlug}
     controller: App\Controller\BlogController::category
     requirements:
         categorySlug: '[a-zA-Z0-9-]+'
+blog_category_page:
+    path: /blog/{categorySlug}/strona-{page}
+    controller: App\Controller\BlogController::category
+    requirements:
+        categorySlug: '[a-zA-Z0-9-]+'
+        page: \d+
 blog_post:
     path: /blog/{categorySlug}/{postSlug}
     controller: App\Controller\BlogController::post

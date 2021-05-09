@@ -1,0 +1,21 @@
+<aside class="post__sidebar sidebar">
+    <section>
+        <h2 class="sidebar__header">Informacje</h2>
+        <p>Autorem strony jest Arkadiusz Waluk - programista PHP z kilkuletnim stażem. <a href="{{ path('page_about') }}" class="sidebar__text-link">Więcej o mnie</a>.</p>
+        <p>Na blogu znajdziesz głównie wpisy dotyczące programowania oraz informatyki, ale także inne, bardziej luźne przemyślenia po godzinach.</p>
+    </section>
+
+    <section>
+        <h2 class="sidebar__header">Ostatnie posty</h2>
+        <div class="sidebar__items">
+            {% for post in recentPosts %}
+                <article class="sidebar__item">
+                    <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="sidebar__image-link">
+                        <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.png') }}" alt="{{ post.main_image_alt }}" class="sidebar__image">
+                        <h3 class="sidebar__title">{{ post.title }}</h3>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+</aside>

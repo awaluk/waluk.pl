@@ -39,9 +39,8 @@
                             <!-- TODO disqus -->
                         </section>
                 </div>
-                <aside class="post__sidebar">
-                    <!-- TODO sidebar -->
-                </aside>
+
+                {{ render(controller('App\\Controller\\BlogController::sidebarPart')) }}
             </div>
         </article>
     </div>

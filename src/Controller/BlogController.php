@@ -40,7 +40,7 @@ class BlogController extends AbstractController
     {
         $category = $this->categoryRepository->getCategory($categorySlug);
         if ($category === null) {
-            throw $this->createNotFoundException(); // message
+            throw $this->createNotFoundException("Category '$categorySlug' not exists");
         }
         if ($page === 0 || $page === 1) {
             return $this->redirectToRoute('blog_category', ['categorySlug' => $categorySlug], 301);
@@ -86,6 +86,15 @@ class BlogController extends AbstractController
 
         return $this->render('blog/parts/nav.html.twig', [
             'categories' => $categories
+        ]);
+    }
+
+    public function sidebarPart(): Response
+    {
+        $recentPosts = $this->postRepository->getPosts(0, 3);
+
+        return $this->render('blog/parts/sidebar.html.twig', [
+            'recentPosts' => $recentPosts
         ]);
     }
 }

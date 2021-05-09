@@ -39,6 +39,15 @@
         display: block;
     }
 
+    &__image-link {
+        text-decoration: none;
+        color: $text-primary-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     &__title {
         margin: 15px 0 5px 0;
         font-weight: normal;

@@ -22,10 +22,12 @@
 
     &__content {
         width: 800px;
+        min-width: 800px;
         box-sizing: border-box;
 
         @media (max-width: $breakpoint-xl) {
             width: 100%;
+            min-width: 100%;
         }
         @media (max-width: $breakpoint-sm) {
             padding: 0 $full-width-padding;

@@ -10,19 +10,7 @@
         <h1 class="main__title main__title--blog">{{ block('title') }}</h1>
         <div class="post-list">
             {% for index, post in posts %}
-                <article class="post-list__post-preview post-preview{{ index % 2 == 1 ? ' post-preview--right' }}">
-                    <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__image-link">
-                        <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.png') }}" alt="" class="post-preview__image">
-                    </a>
-                    <h2 class="post-preview__title">
-                        <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__title-link">{{ post.title }}</a>
-                    </h2>
-                    <p class="post-preview__info">
-                        Kategoria: <a href="{{ url('blog_category', {categorySlug: post.category_slug}) }}" class="post-preview__info-link">{{ post.category_name }}</a> &bullet;
-                        Dodano: <time datetime="{{ post.date|date('c') }}">{{ post.date|date('d.m.Y') }}</time>
-                    </p>
-                    <p>{{ post.description }}</p>
-                </article>
+                {% include 'blog/parts/post-preview.html.twig' %}
             {% endfor %}
         </div>
         {% include 'blog/parts/pagination.html.twig' %}

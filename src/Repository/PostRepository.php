@@ -11,7 +11,7 @@ class PostRepository extends BaseRepository
     public function getPosts(int $from = null, int $limit = null, int $categoryId = null): array
     {
         $query = $this->connection->createQueryBuilder()
-            ->select(['p.title', 'p.slug', 'p.date', 'p.description'])
+            ->select(['p.title', 'p.slug', 'p.date', 'p.description', 'p.main_image_alt'])
             ->addSelect(['c.name as category_name', 'c.slug as category_slug'])
             ->join('p', 'categories', 'c', 'p.category_id = c.id')
             ->from($this->table, 'p')

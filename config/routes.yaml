@@ -10,6 +10,9 @@ page_contact:
 page_english:
     path: /english
     controller: App\Controller\PageController::english
+page_privacy_policy:
+    path: /polityka-prywatnosci
+    controller: App\Controller\PageController::privacyPolicy
 
 blog_index:
     path: /blog

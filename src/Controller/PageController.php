@@ -33,6 +33,11 @@ class PageController extends AbstractController
         return $this->render('page/english.html.twig');
     }
 
+    public function privacyPolicy(): Response
+    {
+        return $this->render('page/privacy-policy.html.twig');
+    }
+
     public function footerPart(CategoryRepository $categoryRepository): Response
     {
         $categories = $categoryRepository->getCategories();

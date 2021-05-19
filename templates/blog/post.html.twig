@@ -29,7 +29,7 @@
                                 </li>
                             </ul>
                         </div>
-                        &bullet;&nbsp;<a href="#komentarze" class="post__info-link" title="Przejdź do komentarzy">Komentarze: 11</a>{# todo #}
+                        &bullet;&nbsp;<a href="{{ absolute_url(app.request.pathinfo) }}#disqus_thread" class="post__info-link" title="Przejdź do komentarzy">Komentarze</a>
                     </div>
                 </div>
             </header>
@@ -37,10 +37,26 @@
                 <div class="post__content content">
                     {{ post.content_html|raw }}
 
-                        <section class="" id="komentarze">
-                            <h2>Komentarze</h2>
-                            <!-- TODO disqus -->
-                        </section>
+                    <section>
+                        <h2 id="komentarze"><a href="#komentarze" class="header-link">Komentarze</a></h2>
+                        {% if app.environment == 'prod' and site.disqus_id is not empty %}
+                            <div id="disqus_thread"></div>
+                            <script>
+                                var disqus_config = function () {
+                                    this.page.url = '{{ absolute_url(app.request.pathinfo) }}';
+                                    this.page.identifier = '{{ post.slug }}';
+                                };
+                                (function() {
+                                    var d = document, s = d.createElement('script');
+                                    s.src = 'https://{{ site.disqus_id }}.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                            </script>
+                            <script id="dsq-count-scr" src="https://{{ site.disqus_id }}.disqus.com/count.js" async></script>
+                            <noscript>Włącz JavaScript, aby <a href="https://disqus.com/?ref_noscript">wyświetlić komentarze Disqus.</a></noscript>
+                        {% endif %}
+                    </section>
                 </div>
 
                 {{ render(controller('App\\Controller\\BlogController::sidebarPart')) }}

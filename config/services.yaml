@@ -8,6 +8,7 @@ parameters:
         name: Arkadiusz Waluk
         email: kontakt@waluk.pl
         google_analytics_id: UA-75292837-1
+        disqus_id: walukpl
         social:
             linkedin: arkadiusz-waluk
             github: awaluk

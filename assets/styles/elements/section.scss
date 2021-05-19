@@ -50,4 +50,35 @@
             margin: 7px 0;
         }
     }
+
+    &__posts {
+        display: flex;
+
+        @media (max-width: $breakpoint-sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__post-preview {
+        width: 33.3%;
+        margin-right: 30px;
+
+        @media (max-width: $breakpoint-sm) {
+            width: 100%;
+            margin-right: 0;
+            border-bottom: 1px solid $primary-color;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__more-posts {
+        font-size: 1.2em;
+        text-align: right;
+        margin: 5px 0 0 0;
+    }
 }

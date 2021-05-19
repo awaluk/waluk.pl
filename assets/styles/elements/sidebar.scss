@@ -16,7 +16,16 @@
         padding: 1px 0 2px 10px;
     }
 
-    &__items {
+    &__link {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &__posts {
         display: flex;
         flex-direction: column;
 
@@ -25,53 +34,23 @@
         }
     }
 
-    &__item {
-        margin-bottom: 25px;
+    &__post-preview {
+        border-bottom: 1px solid $primary-color;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
 
         @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-xl) {
+            width: 33.3%;
+            margin-right: 30px;
+            border-bottom: none;
+            padding-bottom: 0;
             margin-bottom: 0;
-            margin-right: 25px;
-
-            &:last-child {
-                margin-right: 0;
-            }
         }
-
-        @media (max-width: $breakpoint-sm) {
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    &__image {
-        width: 100%;
-        display: block;
-    }
-
-    &__text-link {
-        color: $primary-color;
-        line-height: 1.5em;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    &__image-link {
-        text-decoration: none;
-        color: $text-primary-color;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    &__title {
-        font-weight: normal;
-        font-size: 1em;
-        margin: 5px 0 0 0;
-        line-height: 1.3em;
     }
 }

@@ -5,9 +5,7 @@
             <span class="header__button--bar"></span>
             <span class="header__button--bar"></span>
         </button>
-        <a href="{{ url('page_index') }}" class="header__logo">
-            {{ site.name }}
-        </a>
+        <a href="{{ url('page_index') }}" class="header__logo">{{ site.name }}</a>
         <div class="header__navigation" id="header-nav">
             <nav class="top-nav">
                 <ul class="top-nav__list">
@@ -22,7 +20,7 @@
                     </li>
                     <li class="top-nav__item top-nav__item--separator">&bullet;</li>
                     <li class="top-nav__item">
-                        <a href="{{ url('blog_index') }}" class="top-nav__link top-nav__link--highlighted {{ app.request.get('_route')|slice(0, 5) == 'blog_' ? 'top-nav__link--active' : '' }}">Blog</a>
+                        <a href="{{ url('blog_index') }}" class="top-nav__link {{ app.request.get('_route')|slice(0, 5) == 'blog_' ? 'top-nav__link--active' : '' }}">Blog</a>
                     </li>
                     <li class="top-nav__item top-nav__item--separator">&bullet;</li>
                 </ul>

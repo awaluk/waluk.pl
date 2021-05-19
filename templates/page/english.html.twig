@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}About me, competencies, contact{% endblock %}
-{% block description %}Information about author. Summary of IT skills. Links to profiles and contact e-mail.{% endblock %}
+{% block title %}About me, skills, contact{% endblock %}
+{% block description %}Information about author and projects. Summary of IT skills. Links to profiles and contact e-mail.{% endblock %}
 {% set language = 'en' %}
 
 {% block content %}
@@ -9,17 +9,17 @@
         <div class="section">
             <div class="container">
                 <h1 class="section__main-title">{{ block('title') }}</h1>
-                <p>Thank you for visiting on the site. Unfortunately, most of my activities and content is provided only in Polish language. On this page, I prepared a summary in English.</p>
+                <p>Thank you for visiting on the site. Unfortunately, most of my activities and content is provided only in Polish language. On this page, I prepared a summary in English.</p>
 
-                <p>My name is Arkadiusz Waluk. I'm a PHP programmer and web developer from Poland. I have been interested about computers from the child. I finished technical school with technician title. Currently I work as a PHP developer, but sometimes I also like front-end, server administration and more.</p>
+                <p>My name is Arkadiusz Waluk. I'm a PHP programmer and web developer from Poland. I have been interested about computers since I was child. I graduated from technical school with technician title. Currently I work as a PHP developer, but I also like server administration, front-end and more.</p>
 
-                <p>I'm a creator PHP course <a href="https://www.phpdevs.pl" rel="noopener">PHPDevs</a>. It is internet tutorial about PHP from basics. I'm administrator of Polish forum about IT - <a href="https://forum.pasja-informatyki.pl" rel="noopener">Forum Pasja Informatyki</a>.</p>
+                <p>I'm a creator of PHP course <a href="https://www.phpdevs.pl" rel="noopener">PHPDevs</a>. It is online tutorial about PHP from basics. I'm also the administrator of Polish forum about IT - <a href="https://forum.pasja-informatyki.pl" rel="noopener">Forum Pasja Informatyki</a>.</p>
             </div>
         </div>
 
         <section class="section section--dark">
             <div class="container">
-                <h2 id="competencies" class="section__title">Competencies</h2>
+                <h2 id="skills" class="section__title">Skills</h2>
 
                 <p>I work mostly with:</p>
                 <ul class="box-list">
@@ -63,7 +63,7 @@
                     <li><a href="https://www.instagram.com/{{ site.social.instagram }}/" rel="noopener noreferrer">Instagram</a></li>
                     <li><a href="https://twitter.com/{{ site.social.twitter }}" rel="noopener noreferrer">Twitter</a></li>
                 </ul>
-                <p>You can write me an e-mail, but please send only cooperation propositions or other important messages/suggestions. Currently I'm not interested about execution of individual jobs. I also don't plan to move abroad for work.</p>
+                <p>You can write me an e-mail, but please send only cooperation propositions or other important messages/suggestions. Currently I'm not interested about execution of individual jobs. I also don't plan to move abroad for work.</p>
                 <p>E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
             </div>
         </section>

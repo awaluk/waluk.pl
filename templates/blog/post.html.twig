@@ -24,6 +24,9 @@
                                 <li class="top-social__item">
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ absolute_url(app.request.pathinfo) }}" target="_blank" class="top-social__link" title="Udostępnij wpis na Facebooku"><img src="{{ asset('build/images/facebook.png') }}" alt="Czarno-białe logo Facebooka" class="top-social__icon"></a>
                                 </li>
+                                <li class="top-social__item">
+                                    <a href="https://twitter.com/intent/tweet?text={{ post.title }} {{ absolute_url(app.request.pathinfo) }}" target="_blank" class="top-social__link" title="Udostępnij wpis na Twitterze"><img src="{{ asset('build/images/twitter.png') }}" alt="Czarno-białe logo Twittera" class="top-social__icon"></a>
+                                </li>
                             </ul>
                         </div>
                         &bullet;&nbsp;<a href="#komentarze" class="post__info-link" title="Przejdź do komentarzy">Komentarze: 11</a>{# todo #}

@@ -1,8 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Błąd{% endblock %}
+{% block title %}Błąd {{ exception.statusCode }}{% endblock %}
 {% block description %}{% endblock %}
 
 {% block content %}
-    Błąd {{ exception.statusCode }} - nie można teraz wyświetlić tej strony{# todo #}
+    <article class="main__content">
+        <div class="section">
+            <div class="container">
+                <h1 class="section__main-title">{{ block('title') }}</h1>
+                <p>Ojej, coś poszło nie tak. Niestety nie możesz teraz zobaczyć tej strony.</p>
+            </div>
+        </div>
+    </article>
 {% endblock %}

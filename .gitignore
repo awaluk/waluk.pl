@@ -16,4 +16,6 @@ npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
-posts/
+/posts/
+/public/blog-rss.xml
+/public/sitemap.xml

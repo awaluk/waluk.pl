@@ -38,10 +38,13 @@ class PageController extends AbstractController
         return $this->render('page/privacy-policy.html.twig');
     }
 
-    public function footerPart(CategoryRepository $categoryRepository): Response
+    public function footerPart(CategoryRepository $categoryRepository, bool $showSimple = false): Response
     {
-        $categories = $categoryRepository->getCategories();
+        $categories = $showSimple === false ? $categoryRepository->getCategories() : [];
 
-        return $this->render('page/parts/footer.html.twig', ['categories' => $categories]);
+        return $this->render('page/parts/footer.html.twig', [
+            'categories' => $categories,
+            'show_simple' => $showSimple
+        ]);
     }
 }

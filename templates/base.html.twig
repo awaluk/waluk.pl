@@ -37,7 +37,7 @@
     <main class="main">
         {% block content %}{% endblock %}
     </main>
-    {{ render(controller('App\\Controller\\PageController::footerPart')) }}
+    {{ render(controller('App\\Controller\\PageController::footerPart', {'showSimple': showSimpleFooter ?? false})) }}
     {{ encore_entry_script_tags('app') }}
 </body>
 </html>

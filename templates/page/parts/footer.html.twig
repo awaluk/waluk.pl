@@ -1,5 +1,6 @@
 <footer class="footer">
     <div class="footer__container container">
+        {% if show_simple == false %}
         <div class="footer__boxes">
             <section class="footer__box">
                 <h3 class="footer__header">Blog - kategorie</h3>
@@ -39,6 +40,7 @@
                 </ul>
             </section>
         </div>
+        {% endif %}
 
         <div class="footer__copyright">Copyright &copy; {{ site.name }} 2015-{{ 'now'|date('Y') }}</div>
     </div>

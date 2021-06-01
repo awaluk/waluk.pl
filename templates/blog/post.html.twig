@@ -3,6 +3,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 {% block description %}{{ post.description }}{% endblock %}
 {% set ogType = 'article' %}
+{% set ogImage = '/posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.jpg' %}
 
 {% block content %}
     {{ render(controller('App\\Controller\\BlogController::navPart')) }}
@@ -11,7 +12,7 @@
         <article class="post">
             <header class="post__header">
                 <h1 class="post__title">{{ block('title') }}</h1>
-                <img src="{{ asset('posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.png') }}" alt="{{ post.main_image_alt }}" class="post__image">
+                <img src="{{ asset('posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.jpg') }}" alt="{{ post.main_image_alt }}" class="post__image">
                 <div class="post__info">
                     <div class="post__info-base">
                         Kategoria: <a href="{{ url('blog_category', {categorySlug: category.slug}) }}" class="post__info-link">{{ category.name }}</a> &bullet;

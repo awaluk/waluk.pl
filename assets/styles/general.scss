@@ -7,6 +7,10 @@ p {
     line-height: 1.6em;
 }
 
+h2, h3, h4, h5, h6 {
+    scroll-margin-top: $header-height + 18px;
+}
+
 .container {
     width: $container-xl;
     margin: 0 auto;

@@ -11,7 +11,7 @@
             {% for post in recentPosts %}
                 <article class="sidebar__post-preview post-preview">
                     <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__link">
-                        <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.png') }}" alt="{{ post.main_image_alt }}" class="post-preview__image">
+                        <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.jpg') }}" alt="{{ post.main_image_alt }}" class="post-preview__image">
                         <h3 class="post-preview__title post-preview__title--small">{{ post.title }}</h3>
                     </a>
                 </article>

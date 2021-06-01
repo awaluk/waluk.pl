@@ -5,7 +5,10 @@
             <span class="header__button--bar"></span>
             <span class="header__button--bar"></span>
         </button>
-        <a href="{{ url('page_index') }}" class="header__logo">{{ site.name }}</a>
+        <a href="{{ url('page_index') }}" class="header__logo">
+            <img src="{{ asset('build/images/logo.png') }}" alt="A nachodzące od góry na W" class="header__logo-image">
+            {{ site.name }}
+        </a>
         <div class="header__navigation" id="header-nav">
             <nav class="top-nav">
                 <ul class="top-nav__list">

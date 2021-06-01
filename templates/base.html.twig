@@ -12,14 +12,14 @@
     <meta property="og:url" content="{{ absolute_url(app.request.pathinfo) }}">
     <meta property="og:title" content="{{ block('title') }} | {{ site.name }}">
     <meta property="og:description" content="{{ block('description') }}">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="{{ absolute_url(ogImage ?? '/build/images/og.png') }}">
     <meta property="og:type" content="{{ ogType ?? 'website' }}">
     <meta property="og:locale" content="{{ language is defined and language == 'en' ? 'en_US' : 'pl_PL' }}">
     <meta property="twitter:card" content="summary">
     <meta property="twitter:site" content="@{{ site.social.twitter }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href=""> <!-- TODO -->
+    <link rel="icon" href="{{ asset('build/images/favicon.png') }}" type="image/png">
     {{ encore_entry_link_tags('app') }}
 
     {% if app.environment == 'prod' and site.google_analytics_id is not empty %}

@@ -23,12 +23,20 @@
         color: $text-primary-color;
         padding: 8px 0;
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
 
         @media (max-width: $breakpoint-md) {
             display: flex;
             align-items: center;
             height: $header-height;
+            padding: 0;
         }
+    }
+
+    &__logo-image {
+        height: 24px;
+        margin-right: 6px
     }
 
     &__navigation {

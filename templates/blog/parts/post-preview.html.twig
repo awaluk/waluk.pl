@@ -1,6 +1,6 @@
 <article class="post-list__post-preview post-preview post-preview--border{{ index % 2 == 1 ? ' post-preview--right' }}">
     <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__link">
-        <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.png') }}" alt="{{ post.main_image_alt }}" class="post-preview__image">
+        <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.jpg') }}" alt="{{ post.main_image_alt }}" class="post-preview__image">
         <h2 class="post-preview__title">{{ post.title }}</h2>
     </a>
     <p class="post-preview__info">

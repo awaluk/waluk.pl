@@ -21,7 +21,7 @@ class LoadPostsCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $files = (new Finder())->in('posts')->exclude('public')->name('*.md')->files();
+        $files = (new Finder())->in('posts/*')->exclude('public')->name('*.md')->files();
         foreach ($files as $file) {
             $this->loader->fromFile($file);
         }

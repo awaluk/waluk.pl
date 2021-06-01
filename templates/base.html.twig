@@ -12,7 +12,7 @@
     <meta property="og:url" content="{{ absolute_url(app.request.pathinfo) }}">
     <meta property="og:title" content="{{ block('title') }} | {{ site.name }}">
     <meta property="og:description" content="{{ block('description') }}">
-    <meta property="og:image" content="{{ absolute_url(ogImage ?? '/build/images/og.png') }}">
+    <meta property="og:image" content="{% block og_image %}{{ asset('build/images/og.png') }}{% endblock %}">
     <meta property="og:type" content="{{ ogType ?? 'website' }}">
     <meta property="og:locale" content="{{ language is defined and language == 'en' ? 'en_US' : 'pl_PL' }}">
     <meta property="twitter:card" content="summary">

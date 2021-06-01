@@ -2,8 +2,8 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 {% block description %}{{ post.description }}{% endblock %}
+{% block og_image %}{{ absolute_url('/posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.jpg') }}{% endblock %}
 {% set ogType = 'article' %}
-{% set ogImage = '/posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.jpg' %}
 
 {% block content %}
     {{ render(controller('App\\Controller\\BlogController::navPart')) }}

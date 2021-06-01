@@ -2,7 +2,7 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 {% block description %}{{ post.description }}{% endblock %}
-{% block og_image %}{{ absolute_url('/posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.jpg') }}{% endblock %}
+{% block og_image %}{{ absolute_url('/posts/' ~ category.slug ~ '/' ~ post.slug ~ '/og.png') }}{% endblock %}
 {% set ogType = 'article' %}
 
 {% block content %}

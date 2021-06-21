@@ -21,7 +21,7 @@
     .small-code {
         background: $background-secondary-color;
         color: #bababa;
-        padding: 2px;
+        padding: 1px;
     }
 
     .hljs {
@@ -40,6 +40,7 @@
     ul, ol {
         margin-left: 10px;
         padding-left: 15px;
+        line-height: 1.6em;
     }
 
     li {

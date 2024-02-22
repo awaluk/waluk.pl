@@ -7,16 +7,16 @@ namespace App\Command;
 use App\Repository\PostRepository;
 use DateTime;
 use SimpleXMLElement;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
+#[AsCommand(name: 'app:build:blog-rss')]
 class BuildBlogRSSCommand extends Command
 {
-    protected static $defaultName = 'app:build-blog-rss';
-
     public function __construct(
         private PostRepository $postRepository,
         private UrlGeneratorInterface $urlGenerator,
@@ -25,7 +25,7 @@ class BuildBlogRSSCommand extends Command
         parent::__construct();
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $pageUrl = $this->urlGenerator->generate('page_index', [], UrlGeneratorInterface::ABSOLUTE_URL);
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"></rss>');

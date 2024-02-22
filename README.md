@@ -6,6 +6,6 @@
 3. `yarn install && yarn encore dev`
 
 ## Custom commands
-- `php bin/console app:load-posts` - load all posts from md files to database
-- `php bin/console app:build-blog-rss` - generate RSS file for blog
-- `php bin/console app:build-sitemap` - generate sitemap
+- `php bin/console app:load:posts` - load all posts from md files to database
+- `php bin/console app:build:blog-rss` - generate RSS file for blog
+- `php bin/console app:build:sitemap` - generate sitemap

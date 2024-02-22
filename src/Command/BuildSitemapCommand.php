@@ -8,16 +8,16 @@ use App\Repository\CategoryRepository;
 use App\Repository\PostRepository;
 use DateTime;
 use SimpleXMLElement;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
+#[AsCommand(name: 'app:build:sitemap')]
 class BuildSitemapCommand extends Command
 {
-    protected static $defaultName = 'app:build-sitemap';
-
     public function __construct(
         private PostRepository $postRepository,
         private CategoryRepository $categoryRepository,
@@ -27,7 +27,7 @@ class BuildSitemapCommand extends Command
         parent::__construct();
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
 

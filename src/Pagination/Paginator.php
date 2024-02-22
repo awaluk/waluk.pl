@@ -61,7 +61,7 @@ class Paginator
         }
 
         $pages = [];
-        while ($page <= $this->currentPage + $limit) { // coś nie tak teraz
+        while ($page <= $this->currentPage + $limit) {
             $pages[] = $page;
             $page++;
 

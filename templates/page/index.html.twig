@@ -1,37 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Start - programista PHP, web developer{% endblock %}
-{% block description %}{% endblock %}
+{% block body %}
 
-{% block content %}
-    <article class="main__content">
-        <div class="section section--index"></div>
-
-        <section class="section section--dark">
-            <div class="container">
-                <h2 id="czesc" class="section__title">Cześć!</h2>
-
-                <p>Jestem programistą z kilkuletnim doświadczeniem i chciałbym nieco przybliżyć Ci moją osobę. Na podstronie <a href="{{ path('page_about') }}">O mnie</a> opowiadam nieco więcej o tym, czym się zajmuję i jak to wszystko się zaczęło. Na <a href="{{ path('blog_index') }}">blogu</a> piszę głównie o tematach informatycznych, ale nie tylko. Koniecznie zajrzyj także na moje <a href="{{ path('page_contact') }}">profile społecznościowe</a>.</p>
-
-                <p>If you don't speak Polish, see summary <a href="{{ path('page_english') }}">about me in English</a>.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 id="ostatnio-na-blogu" class="section__title">Ostatnio na blogu</h2>
-                <div class="section__posts">
-                    {% for post in recentPosts %}
-                        <article class="section__post-preview post-preview">
-                            <a href="{{ url('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__link">
-                                <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.jpg') }}" alt="{{ post.main_image_alt }}" class="post-preview__image">
-                                <h3 class="post-preview__title post-preview__title--small">{{ post.title }}</h3>
-                            </a>
-                        </article>
-                    {% endfor %}
-                </div>
-                <p class="section__more-posts"><a href="{{ path('blog_index') }}">Zobacz więcej &raquo;</a></p>
-            </div>
-        </section>
-    </article>
 {% endblock %}

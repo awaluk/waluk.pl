@@ -1,13 +1,104 @@
-@import "vars";
-@import "general";
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    background: #fff;
+}
 
-@import "elements/blog-nav";
-@import "elements/content";
-@import "elements/footer";
-@import "elements/header";
-@import "elements/main";
-@import "elements/pagination";
-@import "elements/post";
-@import "elements/post-list";
-@import "elements/section";
-@import "elements/sidebar";
+.container {
+    width: 1139px;
+    margin: 0 auto;
+}
+
+.container--sm {
+    width: 750px;
+    margin: 0 auto;
+}
+
+////////
+
+.header {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.header__logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+        color: #000;
+    }
+}
+
+.nav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav__item {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.nav__link {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:hover {
+        color: #000;
+        border-bottom: 1px solid #000;
+    }
+
+    &--active {
+        border-bottom: 1px solid #000;
+    }
+
+    &--special {
+        background: #000;
+        color: #fff;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:hover {
+            color: #fff;
+            background: lighten(#000, 25%);
+            border-bottom: none;
+        }
+    }
+}
+
+
+.post {
+
+}
+
+.post__title {
+    font-size: 2rem;
+}
+
+.post__content {
+    p {
+        font-size: 1.2rem;
+        line-height: 2.1rem;
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}

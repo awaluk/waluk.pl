@@ -1,5 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        site: '%site%'
 
 when@test:
     twig:

@@ -12,7 +12,7 @@ use League\CommonMark\HtmlElement;
 
 class HeadingWithLinkRenderer implements BlockRendererInterface
 {
-    public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
+    public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false): HtmlElement
     {
         if (!$block instanceof Heading) {
             throw new \InvalidArgumentException('Incompatible block type: ' . \get_class($block));
@@ -28,7 +28,7 @@ class HeadingWithLinkRenderer implements BlockRendererInterface
         return new HtmlElement(
             $tag,
             $attrs,
-            new HtmlElement('a', ['href' => '#' . $link, 'class' => 'header-link'], $content)
+            new HtmlElement('a', ['href' => '#' . $link, 'class' => 'content__header-link'], $content)
         );
     }
 

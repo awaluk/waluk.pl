@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% if paginator.currentPage == 1 %}Blog - najnowsze posty{% else %}Blog - strona {{ paginator.currentPage }}{% endif %}{% endblock %}
+{% block description %}Lista postów na blogu informatycznym Arkadiusza Waluka. Główne tematy to programowanie, strony internetowe czy samorozwój, ale jest tu także miejsce na luźne przemyślenia.{% endblock %}
+
+{% block content %}
+    <div class="container container--lg">
+        <h1 class="main__title">{{ block('title') }}</h1>
+        <div class="post-list">
+            {% for post in posts %}
+                <article class="post-preview">
+                    {% if post.main_image_alt %}
+                        <a href="{{ path('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}">
+                            <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.jpg') }}" alt="" class="post-preview__image">
+                        </a>
+                    {% endif %}
+                    <p class="post-preview__post-info post-info"><a href="{{ path('blog_category', {categorySlug: post.category_slug}) }}" class="post-info__link">{{ post.category_name }}</a> <span class="post-info__spacer">&bull;</span> {{ post.date|date('d.m.Y') }}</p>
+                    <h2 class="post-preview__title">
+                        <a href="{{ path('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__link">{{ post.title }}</a>
+                    </h2>
+                    <p class="post-preview__description">{{ post.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+
+        {% include 'parts/pagination.html.twig' %}
+    </div>
+{% endblock %}

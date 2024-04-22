@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block description %}{{ post.description }}{% endblock %}
+{% block og_image %}{{ absolute_url(asset('posts/' ~ category.slug ~ '/' ~ post.slug ~ '/og.png')) }}{% endblock %}
+{% set ogType = 'article' %}
+
+{% block content %}
+    <article class="post">
+        {% if post.main_image_alt %}
+            <img src="{{ asset('posts/' ~ category.slug ~ '/' ~ post.slug ~ '/main.jpg') }}" alt="{{ post.main_image_alt }}" class="post__image">
+        {% endif %}
+        <header class="post__header container container--sm">
+            <p class="post-info"><a href="{{ path('blog_category', {categorySlug: category.slug}) }}" class="post-info__link">{{ category.name }}</a> <span class="post-info__spacer">&bull;</span> <time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date('d.m.Y') }}</time></p>
+            <h1 class="post__title">{{ post.title }}</h1>
+        </header>
+        <div class="container container--sm content">
+            {{ post.content_html|raw }}
+        </div>
+    </article>
+{% endblock %}

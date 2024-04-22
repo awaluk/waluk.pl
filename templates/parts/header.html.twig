@@ -1,0 +1,16 @@
+<header id="header" class="header">
+    <div class="header__container container container--lg">
+        <a href="{{ path('page_index') }}" class="header__logo">Arkadiusz Waluk</a>
+        <nav class="header__nav nav">
+            <button id="nav-button" class="nav__button" title="Pokaż/ukryj menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></path></svg>
+            </button>
+            <ul id="nav-list" class="nav__list">
+                <li class="nav__item"><a href="{{ path('page_about') }}" class="nav__link">O mnie</a></li>
+                <li class="nav__item"><a href="{{ path('page_contact') }}" class="nav__link">Kontakt</a></li>
+                <li class="nav__item"><a href="{{ path('page_english') }}" class="nav__link">English</a></li>
+                <li class="nav__item"><a href="{{ path('blog_index') }}" class="nav__link nav__link--special">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -20,7 +20,7 @@ class SmallCodeRenderer implements InlineRendererInterface
         }
 
         $attrs = $inline->getData('attributes', []);
-        $attrs['class'] = empty($attrs['class']) ? 'small-code' : ('small-code ' . $attrs['class']);
+        $attrs['class'] = empty($attrs['class']) ? 'inline-code' : ('inline-code ' . $attrs['class']);
 
         return new HtmlElement('code', $attrs, Xml::escape($inline->getContent()));
     }

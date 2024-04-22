@@ -1,0 +1,105 @@
+.content {
+  font-size: 1.1rem;
+  line-height: 1.75rem;
+
+  p, img, .hljs, blockquote, .block, hr {
+    margin-top: $content-spacing;
+    margin-bottom: $content-spacing;
+  }
+
+  ul, ol {
+    padding-left: 25px;
+  }
+
+  li {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: $border-radius;
+  }
+
+  .hljs {
+    background: $secondary-color;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    border-radius: $border-radius;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    background: $secondary-color;
+    color: $secondary-color-text;
+    padding: 1px $content-spacing;
+    border-left: 5px solid $primary-color;
+    font-style: italic;
+    border-radius: $border-radius;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.content__header-link {
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  hr {
+    border-top: 1px solid $primary-color;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    margin-top: 35px;
+    margin-bottom: $content-spacing;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 35px;
+    margin-bottom: $content-spacing;
+  }
+}
+
+.block {
+  padding: 1px 20px;
+  border-radius: $border-radius;
+
+  &--info {
+    background: $primary-color;
+    color: $primary-color-text;
+  }
+
+  a {
+    color: $primary-color-text;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.inline-code {
+  background: $secondary-color;
+  color: $secondary-color-text;
+  border-radius: $border-radius;
+  padding: 2px 6px;
+  font-size: 1rem;
+}

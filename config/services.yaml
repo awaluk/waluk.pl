@@ -14,7 +14,7 @@ parameters:
             github: awaluk
             facebook: walukpl
             instagram: walukpl
-            twitter: ArkadiuszWaluk
+            x: ArkadiuszWaluk
     parser:
         html_input: escape
         external_link:

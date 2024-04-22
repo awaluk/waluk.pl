@@ -1,0 +1,44 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  background: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &--lg {
+    width: $container-lg;
+
+    @media (max-width: $container-lg + $container-padding) {
+      width: $container-sm;
+    }
+
+    @media (max-width: $container-sm + $container-padding) {
+      width: 100%;
+      padding: 0 $container-padding;
+    }
+  }
+
+  &--sm {
+    width: $container-sm;
+
+    @media (max-width: $container-sm + $container-padding) {
+      width: 100%;
+      padding: 0 $container-padding;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.main {
+  &__title {
+    font-size: 2rem;
+    margin: 30px 0 20px 0;
+  }
+}

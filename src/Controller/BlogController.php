@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BlogController extends AbstractController
 {
-    private const PER_PAGE = 8;
+    private const int PER_PAGE = 8;
 
     public function __construct(private PostRepository $postRepository, private CategoryRepository $categoryRepository)
     {
@@ -77,24 +77,6 @@ class BlogController extends AbstractController
         return $this->render('blog/post.html.twig', [
             'category' => $category,
             'post' => $post
-        ]);
-    }
-
-    public function navPart(): Response
-    {
-        $categories = $this->categoryRepository->getCategories();
-
-        return $this->render('blog/parts/nav.html.twig', [
-            'categories' => $categories
-        ]);
-    }
-
-    public function sidebarPart(): Response
-    {
-        $recentPosts = $this->postRepository->getPosts(0, 3);
-
-        return $this->render('blog/parts/sidebar.html.twig', [
-            'recentPosts' => $recentPosts
         ]);
     }
 }

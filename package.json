@@ -2,8 +2,11 @@
     "devDependencies": {
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.0",
+        "@csstools/normalize.css": "^12.1.1",
         "@symfony/webpack-encore": "^4.0.0",
         "core-js": "^3.23.0",
+        "file-loader": "^6.2.0",
+        "highlight.js": "^11.9.0",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.72.0",
         "sass-loader": "^14.1.1",

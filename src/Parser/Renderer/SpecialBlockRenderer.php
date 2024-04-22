@@ -12,7 +12,7 @@ use App\Parser\Element\SpecialBlock;
 
 class SpecialBlockRenderer implements BlockRendererInterface
 {
-    public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
+    public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false): HtmlElement
     {
         if (!$block instanceof SpecialBlock) {
             throw new \InvalidArgumentException('Incompatible block type: ' . \get_class($block));

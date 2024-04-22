@@ -7,21 +7,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="author" content="Arkadiusz Waluk">
     <meta name="description" content="{% block description %}{% endblock %}">
-
     <meta property="og:site_name" content="{{ site.name }}">
     <meta property="og:url" content="{{ absolute_url(app.request.pathinfo) }}">
     <meta property="og:title" content="{{ block('title') }} | {{ site.name }}">
     <meta property="og:description" content="{{ block('description') }}">
-    <meta property="og:image" content="{% block og_image %}{{ asset('build/images/og.png') }}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ absolute_url(asset('build/images/og.png')) }}{% endblock %}">
     <meta property="og:type" content="{{ ogType ?? 'website' }}">
     <meta property="og:locale" content="{{ language is defined and language == 'en' ? 'en_US' : 'pl_PL' }}">
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:site" content="@{{ site.social.twitter }}">
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta property="twitter:site" content="@{{ site.social.x }}">
     <link rel="icon" href="{{ asset('build/images/favicon.png') }}" type="image/png">
     {{ encore_entry_link_tags('app') }}
-
     {% if app.environment == 'prod' and site.google_analytics_id is not empty %}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
         <script>
@@ -33,56 +29,11 @@
     {% endif %}
 </head>
 <body>
-    <header class="header">
-        <div class="header__container container">
-            <a href="#" class="header__logo">Arkadiusz Waluk</a>
-            <nav class="header__nav nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link">O mnie</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">English</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link nav__link--special">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article class="post">
-            <div class="container--sm">
-                <p>Programowanie | 25.01.2023</p>
-                <h1 class="post__title">Jak dobrze zadawać pytania na forach?</h1>
-            </div>
-
-            <div class="container--sm post__content">
-                <p>Fora o tematyce informatycznej mogą być bardzo pomocnym miejscem. Spotkasz na nich wielu ludzi, którzy doradzą, pomogą i porozmawiają. Nie muszę chyba wspominać tutaj o Stack Overflow. Co prawda nie jest to typowe forum, gdzie mamy wątki, w których dodaje się posty, a serwis z formułą Q&A (pytania i odpowiedzi). Generalnie jednak podstawowe założenie jest podobne: strona, gdzie można o coś zapytać, a inni ludzie się wypowiedzą. Często wystarczy po prostu wpisać w wyszukiwarkę treść błędu, który zwróci nam kompilator/interpreter i już, pierwszy wynik to właśnie SO z konkretną propozycją poprawy, problem rozwiązany. Ba… przecież jest pełno śmiechów z tego, że programowanie opiera się na kopiowaniu ze Stacka :)</p>
-
-                <p>Zadanie pytania w takim serwisie nie wydaje się problematyczne. No bo co w tym trudnego? Klikasz, piszesz, o co chodzi i publikujesz. Niestety, okazuje się jednak, że wiele pytań zadanych jest po prostu źle. To nie wiadomo jak na nie odpowiedzieć, to brakuje informacji, a to po prostu nie zachęca do tego, aby pochylić się nad problemem… Postaram się dziś nieco przybliżyć ten problem.</p>
-
-                <p>Jeśli chcesz dobrze napisać prośbę o pomoc, wystarczy spróbować zmienić perspektywę: przeczytaj swoją wypowiedź i pomyśl, że to Ty masz na nią odpowiedzieć. Zdaję sobie sprawę, że to siłą rzeczy nie będzie zbyt obiektywna ocena, ale spróbuj to zrobić. Czy jeśli Ty dostałbyś dokładnie takie informacje, jakie zawarłeś w poście, to byłbyś w stanie udzielić odpowiedzi bez dodatkowego dopytywania o podstawowe kwestie?</p>
-
-                <h2>Pomocy, pomóżcie, help, szybko!!!</h2>
-
-                <p>Tak, to prawda, że nie znasz odpowiedzi, dlatego zgłaszasz się do innych. Jednak inni nie są wróżbitami ze szklanymi kulami. Być może mają więcej doświadczenia na dany temat, możliwe, że dzięki temu skojarzą od razu jakiś problem, ale nadal - nie będą się domyślać, o co Ci chodzi! Nie zapomnij także, że przed zadaniem pytania należy spróbować poradzić sobie samemu. Najpierw poszukaj w internecie (najlepiej po angielsku, czasem wystarczy tylko wklejenie treści błędu), przeszukaj wątki w danym serwisie i zapytaj, dopiero gdy nie znajdziesz rozwiązania.</p>
-
-                <p>Dodawanie wielu takich pustych słów, pisanie ich wielkimi literami, wstawianie wielu wykrzykników czy innych znaków nie jest w żaden sposób potrzebne. Podobnie poganianie ludzi, że to ma być szybko i na już. Wręcz przeciwnie, im więcej będzie takich wstawek, tym większe jest wrażenie, że ktoś jest natarczywy, a to tylko bardziej zniechęca do pomocy. Zwykłe: proszę o pomoc jest w zupełności wystarczające, kulturalne i zrozumiałe.</p>
-
-                <h2>Niespójny tytuł, kategoria, tagi lub inne elementy</h2>
-
-                <p>Poruszona tu kwestia zależy od danego serwisu, jednak przeważnie trzeba podać tytuł tematu/pytania, wybrać jakieś tagi, może wskazać kategorię. W takiej sytuacji zastanów się nad tym przez moment. Tytuł ma być krótkim podsumowaniem Twojego pytania, aby ktoś bez czytania całości wiedział, o co ogólnie chodzi. Przeważnie jest on prezentowany na różnego rodzaju listach wątków, a więc powinien być dość precyzyjny i nie za długi jednocześnie.</p>
-            </div>
-        </article>
+    {% include 'parts/header.html.twig' %}
+    <main class="main">
+        {% block content %}{% endblock %}
     </main>
-
-    <footer>
-
-    </footer>
-
-{#    {% include 'page/parts/header.html.twig' %}#}
-{#    <main class="main">#}
-{#        {% block content %}{% endblock %}#}
-{#    </main>#}
-{#    {{ render(controller('App\\Controller\\PageController::footerPart', {'showSimple': showSimpleFooter ?? false})) }}#}
+    {% include 'parts/footer.html.twig' %}
     {{ encore_entry_script_tags('app') }}
 </body>
 </html>

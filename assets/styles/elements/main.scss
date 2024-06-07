@@ -1,0 +1,34 @@
+.main {
+  &__title {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: $content-spacing;
+  }
+}
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &--color {
+    background: $secondary-color;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: $content-spacing;
+    font-size: 1.6rem;
+  }
+
+  &__socials {
+    margin-top: $content-spacing;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child, & .content--no-gap > :last-child {
+    margin-bottom: 0;
+  }
+}

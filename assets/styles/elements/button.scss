@@ -1,0 +1,35 @@
+.button {
+  background: $primary-color;
+  color: $primary-color-text;
+  border-radius: $border-radius;
+  padding: 8px 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color $transition-time ease-in-out;
+
+  &:hover {
+    color: $primary-color-text;
+    background: lighten($primary-color, 9%);
+    border-bottom: none;
+  }
+
+  &--big {
+    padding: 18px 36px;
+    font-size: 1.3rem;
+  }
+
+  &--center {
+    @media (min-width: $container-sm + $container-padding) {
+      margin: 0 auto;
+      width: calc($container-sm / 2);
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    margin-left: 5px;
+    fill: $primary-color-text;
+  }
+}

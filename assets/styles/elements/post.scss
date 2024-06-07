@@ -13,6 +13,14 @@
     font-size: 2rem;
     margin: 15px 0 20px 0;
   }
+
+  &__comments {
+    padding-bottom: 50px;
+
+    a {
+      color: $primary-color;
+    }
+  }
 }
 
 .post-info {
@@ -24,10 +32,12 @@
 
   &__link {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color $transition-time ease-in-out;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration-color: inherit;
     }
   }
 }
@@ -39,6 +49,10 @@
   grid-template-columns: 1fr 1fr;
   margin-top: 25px;
   margin-bottom: 35px;
+
+  &--small {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   @media (max-width: $container-sm + $container-padding) {
     grid-template-columns: 1fr;
@@ -63,10 +77,12 @@
 
   &__link {
     color: #000;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color $transition-time ease-in-out;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration-color: inherit;
     }
   }
 

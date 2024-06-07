@@ -4,8 +4,8 @@
 {% block description %}Wystąpił błąd.{% endblock %}
 
 {% block content %}
-    <div class="container container--sm container--center">
-        <h1 class="main__title">Błąd {{ exception.statusCode }}</h1>
+    <article class="container container--sm container--center section">
+        <h1 class="main__title">{{ block('title') }}</h1>
         <p>Wystąpił błąd. Spróbuj ponownie za chwilę.</p>
-    </div>
+    </article>
 {% endblock %}

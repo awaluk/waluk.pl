@@ -1,0 +1,40 @@
+.tile-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $content-spacing;
+
+  @media (max-width: $container-sm + $container-padding) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tile {
+  border: 1px solid darken($secondary-color, 7%);
+  box-shadow: 5px 5px 0 1px darken($secondary-color, 7%);
+  border-radius: $border-radius;
+  padding: 18px 20px;
+  transition: background-color $transition-time ease-in-out;
+
+  &:hover {
+    background: $secondary-color;
+  }
+
+  &__title {
+    margin: calc($content-spacing / 2) 0 $content-spacing 0;
+    font-weight: normal;
+    font-size: 1.4rem;
+    display: flex;
+  }
+
+  &__icon {
+    width: 22px;
+    margin-right: 12px;
+    fill: lighten($secondary-color-text, 40%);
+  }
+
+  &__content {
+    font-size: 1.1rem;
+    line-height: 1.75rem;
+    margin: 15px 0 12px 0;
+  }
+}

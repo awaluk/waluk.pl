@@ -1,8 +1,99 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}O mnie{% endblock %}
-{% block description %}{% endblock %}
+{% block description %}Krótka biografia Arkadiusza Waluka. Lista najważniejszych umiejętności programistycznych. Wyróżnienie kluczowych tematów projektów.{% endblock %}
 
 {% block content %}
+    <section>
+        <article class="container container--lg section">
+            <h1 class="main__title">{{ block('title') }}</h1>
+            <div class="content content--no-gap">
+                <p>Nazywam się Arkadiusz Waluk. Jestem <strong>programistą z kilkuletnim stażem</strong> oraz pasjonatem nowych technologii. Zajmuję się głównie szeroko pojętym web developmentem, z największym naciskiem na język PHP. Wyróżnia mnie pasja oraz zaangażowanie.</p>
 
+                <p>Od dziecka interesowałem się komputerami. Już wtedy pasjonowało mnie tworzenie — możliwość zamiany linii kodu na rzeczywisty, widoczny efekt. Następnie ukończyłem technikum, zdobywając tytuł technika informatyka. Obecnie pracuję jako <strong>back-end developer</strong>, choć zdarza mi się także zajmować innymi zagadnieniami: front-endem, administracją serwerami i podobnymi.</p>
+
+                <p>Po godzinach z przyjemnością kontynuuję rozwój, szukam nowych możliwości oraz poszerzam wiedzę. Jestem administratorem
+                    <a href="https://forum.pasja-informatyki.pl/" target="_blank" rel="noopener">Forum Pasja Informatyki</a>, gdzie pomagam innym i zarządzam dalszym rozwojem tego miejsca. Tworzę także internetowy kurs
+                    <a href="https://www.phpdevs.pl/" target="_blank" rel="noopener">PHPDevs</a>, w którym uczę programowania w PHP od podstaw.</p>
+            </div>
+        </article>
+
+        <article class="section section--color" id="umiejetnosci">
+            <div class="container container--lg">
+                <h2 class="section__title">Umiejętności</h2>
+
+                <p class="content content--single">Obecnie najczęściej pracuję z:</p>
+                <ul class="list">
+                    <li class="list__item">PHP</li>
+                    <li class="list__item">OOP</li>
+                    <li class="list__item">Symfony</li>
+                    <li class="list__item">Laravel</li>
+                    <li class="list__item">PostgreSQL</li>
+                    <li class="list__item">MySQL</li>
+                    <li class="list__item">PHPUnit</li>
+                </ul>
+
+                <p class="content content--single">Znam i rozwijam się także w:</p>
+                <ul class="list">
+                    <li class="list__item">JavaScript</li>
+                    <li class="list__item">Vue</li>
+                    <li class="list__item">HTML</li>
+                    <li class="list__item">CSS</li>
+                    <li class="list__item">Java</li>
+                    <li class="list__item">Python</li>
+                    <li class="list__item">WordPress</li>
+                </ul>
+
+                <p class="content content--single">Na co dzień wykorzystuję:</p>
+                <ul class="list">
+                    <li class="list__item">Linux</li>
+                    <li class="list__item">Docker</li>
+                    <li class="list__item">Git</li>
+                    <li class="list__item">Xdebug</li>
+                    <li class="list__item">PhpStorm</li>
+                    <li class="list__item">Composer</li>
+                </ul>
+            </div>
+        </article>
+
+        <section class="container container--lg section" id="nad-czym-pracowalem">
+            <h2 class="section__title">Nad czym pracowałem?</h2>
+
+            <div class="tile-list">
+                <article class="tile">
+                    <h3 class="tile__title"><svg class="tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"></path></svg> E-commerce</h3>
+                    <p class="tile__content">Obsługa zakupów, koszyka, zamówień. Integracja bramek płatności i&nbsp;dostaw przez API. Synchronizacja stanów magazynowych. Uruchamianie sklepów internetowych.</p>
+                </article>
+                <article class="tile">
+                    <h3 class="tile__title"><svg class="tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M120-120v-80h720v80H120Zm74-200L80-514l62-12 70 62 192-52-162-274 78-24 274 246 200-54q32-9 58 12t26 56q0 22-13.5 39T830-492L194-320Z"></path></svg> Branża lotnicza i finansowa</h3>
+                    <p class="tile__content">Narzędzia wspierające pilotów samolotów. Systemy integrujące firmy pożyczkowe oraz prowadzenie całego procesu. Generowanie dokumentów, wysyłanie powiadomień.</p>
+                </article>
+                <article class="tile">
+                    <h3 class="tile__title"><svg class="tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z"></path></svg> Web scraping</h3>
+                    <p class="tile__content">Zbieranie informacji dostępnych publicznie na stronach. Przechowywanie i&nbsp;analiza dużej ilości danych. Skalowanie, zabezpieczanie czy optymalizacja infrastruktury.</p>
+                </article>
+                <article class="tile">
+                    <h3 class="tile__title"><svg class="tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"></path></svg> Systemy CRM</h3>
+                    <p class="tile__content">Zarządzanie użytkownikami, zaawansowane moduły uprawnień i&nbsp;ról, komunikacja z zewnętrznymi narzędziami, generowanie faktur, raportów, przenoszenie oraz archiwizowanie danych.</p>
+                </article>
+                <article class="tile">
+                    <h3 class="tile__title"><svg class="tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-120q-33 0-56.5-23.5T80-200v-640l67 67 66-67 67 67 67-67 66 67 67-67 67 67 66-67 67 67 67-67 66 67 67-67v640q0 33-23.5 56.5T800-120H160Zm0-80h280v-240H160v240Zm360 0h280v-80H520v80Zm0-160h280v-80H520v80ZM160-520h640v-120H160v120Z"></path></svg> Wizytówki, blogi</h3>
+                    <p class="tile__content">Prezentacja oferty firmy, portfolio albo blog z panelem administracyjnym. Cenniki, kalkulatory ofert, formularze kontaktowe. Albo wszystko to w&nbsp;ramach jednej witryny.</p>
+                </article>
+                <article class="tile">
+                    <h3 class="tile__title"><svg class="tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z"></path></svg> Non-profit</h3>
+                    <p class="tile__content">Rozbudowa i&nbsp;regularna aktualizacja witryny promującej projekty budżetu obywatelskiego. Rozwój silnika forum. Tworzenie własnych pluginów dodających nowe funkcjonalności.</p>
+                </article>
+            </div>
+        </section>
+    </section>
+
+    <div class="section section--color">
+        <div class="container container--lg">
+            <a href="{{ url('page_contact') }}" class="button button--big button--center">
+                Zainteresowany? Napisz do mnie
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="button__icon"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"></path></svg>
+            </a>
+        </div>
+    </div>
 {% endblock %}

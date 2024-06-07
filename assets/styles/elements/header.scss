@@ -42,6 +42,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    align-items: center;
 
     @media (max-width: $container-sm + $container-padding) {
       display: none;
@@ -78,32 +79,18 @@
     display: block;
     text-decoration: none;
     color: $header-color;
-    padding: 8px 5px;
+    padding: 8px 5px 7px 5px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color $transition-time ease-in-out;
 
     &:hover {
       color: $header-color;
-      padding-bottom: 7px;
       border-bottom: 1px solid $header-color;
     }
 
     &--active {
       padding-bottom: 7px;
       border-bottom: 1px solid $primary-color;
-    }
-
-    &--special {
-      background: $primary-color;
-      color: $primary-color-text;
-      border-radius: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-
-      &:hover {
-        color: $primary-color-text;
-        background: lighten($primary-color, 9%);
-        border-bottom: none;
-        padding-bottom: 8px;
-      }
     }
   }
 }

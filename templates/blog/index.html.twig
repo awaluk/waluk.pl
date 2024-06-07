@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% if paginator.currentPage == 1 %}Blog - najnowsze posty{% else %}Blog - strona {{ paginator.currentPage }}{% endif %}{% endblock %}
+{% block title %}{% if paginator.currentPage == 1 %}Blog — najnowsze posty{% else %}Blog — strona {{ paginator.currentPage }}{% endif %}{% endblock %}
 {% block description %}Lista postów na blogu informatycznym Arkadiusza Waluka. Główne tematy to programowanie, strony internetowe czy samorozwój, ale jest tu także miejsce na luźne przemyślenia.{% endblock %}
 
 {% block content %}
-    <div class="container container--lg">
+    <section class="container container--lg section">
         <h1 class="main__title">{{ block('title') }}</h1>
         <div class="post-list">
             {% for post in posts %}
@@ -24,5 +24,5 @@
         </div>
 
         {% include 'parts/pagination.html.twig' %}
-    </div>
+    </section>
 {% endblock %}

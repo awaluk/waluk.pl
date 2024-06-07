@@ -14,8 +14,25 @@
             <p class="post-info"><a href="{{ path('blog_category', {categorySlug: category.slug}) }}" class="post-info__link">{{ category.name }}</a> <span class="post-info__spacer">&bull;</span> <time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date('d.m.Y') }}</time></p>
             <h1 class="post__title">{{ post.title }}</h1>
         </header>
-        <div class="container container--sm content">
-            {{ post.content_html|raw }}
+        <div class="container container--sm">
+            <div class="content">
+                {{ post.content_html|raw }}
+            </div>
+            <section class="post__comments" id="disqus_thread"></section>
+            {% if app.environment == 'prod' and site.disqus_id is not empty %}
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = '{{ absolute_url(app.request.pathinfo) }}';
+                        this.page.identifier = '{{ post.slug }}';
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://{{ site.disqus_id }}.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+            {% endif %}
         </div>
     </article>
 {% endblock %}

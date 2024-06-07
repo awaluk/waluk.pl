@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}English: about me, skills, contact{% endblock %}
+{% block description %}Information about Arkadiusz Waluk and projects. Summary of IT skills. Links to profiles and contact e-mail.{% endblock %}
+{% set language = 'en' %}
+
+{% block content %}
+    <section>
+        <article class="container container--lg section">
+            <h1 class="main__title">English: about me</h1>
+            <div class="content content--no-gap">
+                <p>Hello. Most of the content on my website is available only in Polish. I prepared a summary in English here.</p>
+
+                <p>My name is Arkadiusz Waluk. I'm a <strong>programmer from Poland with few years of experience</strong>. I work as a back-end developer with focus mostly on PHP, but sometimes I like front-end, server administration and more.</p>
+
+                <p>I'm a creator of PHP course <a href="https://www.phpdevs.pl/" target="_blank" rel="noopener">PHPDevs</a>. This is online tutorial about PHP from basics. I'm also the administrator of Polish forum about IT — <a href="https://forum.pasja-informatyki.pl/" target="_blank" rel="noopener">Forum Pasja Informatyki</a>. After work, I'm passionate everything about new technologies.</p>
+            </div>
+        </article>
+
+        <article class="section section--color" id="skills">
+            <div class="container container--lg">
+                <h2 class="section__title">Skills</h2>
+
+                <p class="content content--single">Currently, I mostly work with:</p>
+                <ul class="list">
+                    <li class="list__item">PHP</li>
+                    <li class="list__item">OOP</li>
+                    <li class="list__item">Symfony</li>
+                    <li class="list__item">Laravel</li>
+                    <li class="list__item">PostgreSQL</li>
+                    <li class="list__item">MySQL</li>
+                    <li class="list__item">PHPUnit</li>
+                </ul>
+
+                <p class="content content--single">I also know and develop in:</p>
+                <ul class="list">
+                    <li class="list__item">JavaScript</li>
+                    <li class="list__item">Vue</li>
+                    <li class="list__item">HTML</li>
+                    <li class="list__item">CSS</li>
+                    <li class="list__item">Java</li>
+                    <li class="list__item">Python</li>
+                    <li class="list__item">WordPress</li>
+                </ul>
+
+                <p class="content content--single">Every day I use:</p>
+                <ul class="list">
+                    <li class="list__item">Linux</li>
+                    <li class="list__item">Docker</li>
+                    <li class="list__item">Git</li>
+                    <li class="list__item">Xdebug</li>
+                    <li class="list__item">PhpStorm</li>
+                    <li class="list__item">Composer</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="container container--lg section" id="contact">
+            <h2 class="section__title">Contact</h2>
+            <div class="content">
+                <p>Do you have any questions or comments? Maybe you have a cooperation proposal? Contact me! Write to the e-mail address: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                <p>You can also follow my social profiles:</p>
+            </div>
+            <div class="section__socials">
+                {% include 'parts/socials.html.twig' with {'classes': 'socials--color section__socials'} %}
+            </div>
+        </article>
+
+        <article class="section section--color" id="company-data">
+            <div class="container container--lg">
+                <h2 class="section__title">Company data</h2>
+                <div class="content content--no-gap">
+                    <address>
+                        Arkadiusz Waluk waluk.pl<br>
+                        Klaudyny Potockiej 25<br>
+                        60-211 Poznań, Poland<br>
+                        VAT ID: PL7792538172
+                    </address>
+                </div>
+            </div>
+        </article>
+    </section>
+{% endblock %}

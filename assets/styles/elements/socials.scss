@@ -1,0 +1,40 @@
+.socials {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    margin: 0 6px;
+    transition: opacity $transition-time ease-in-out;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: $primary-color-text;
+  }
+
+  &--color &__icon {
+    padding: 7px;
+    background: $primary-color;
+    border-radius: $border-radius;
+  }
+}

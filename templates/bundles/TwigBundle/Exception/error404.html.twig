@@ -4,8 +4,8 @@
 {% block description %}Strona nie została znaleziona.{% endblock %}
 
 {% block content %}
-    <div class="container container--sm container--center">
-        <h1 class="main__title">Błąd 404</h1>
+    <article class="container container--sm container--center section">
+        <h1 class="main__title">{{ block('title') }}</h1>
         <p>Niestety, szukana strona nie została znaleziona…</p>
-    </div>
+    </article>
 {% endblock %}

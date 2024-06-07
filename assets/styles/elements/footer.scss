@@ -22,40 +22,6 @@ $footer-breakpoint: 500px;
   }
 }
 
-.socials {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-
-  &__item {
-    margin: 0 7px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-
-  &__link {
-    display: block;
-  }
-
-  &__icon {
-    width: 22px;
-    height: 22px;
-    display: block;
-    fill: $primary-color-text;
-  }
-}
-
 .links {
   display: flex;
   list-style-type: none;
@@ -75,6 +41,8 @@ $footer-breakpoint: 500px;
     text-decoration: none;
     color: $primary-color-text;
     padding: 8px 5px;
+    border-bottom: 1px solid $primary-color;
+    transition: border-bottom-color $transition-time ease-in-out;
 
     &:hover {
       color: $primary-color-text;

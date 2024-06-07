@@ -1,8 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-{% block description %}{% endblock %}
+{% block title %}Kontakt{% endblock %}
+{% block description %}Adres e-mail do kontaktu z Arkadiuszem Walukiem. Zaproszenie do kanałów w social media i RSS. Zachęcenie do udziału w dyskusjach i pytania na forum.{% endblock %}
 
 {% block content %}
-
+    <section>
+        <article class="section section--color">
+            <div class="container container--lg">
+                <h1 class="main__title">{{ block('title') }}</h1>
+                <div class="content">
+                    <p>Masz pytania lub uwagi do wpisu na blogu? Chcesz porozmawiać o możliwości współpracy? Skontaktuj się ze mną! Na wszystkie wiadomości postaram się odpowiedzieć możliwie najszybciej. Napisz na adres e-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                    <p>Zachęcam też do zaobserwowania mnie w social mediach czy dodania bloga do czytnika RSS, aby nie przegapić żadnych nowości:</p>
+                </div>
+                <div class="section__socials">
+                    {% include 'parts/socials.html.twig' with {'classes': 'socials--color section__socials'} %}
+                </div>
+            </div>
+        </article>
+        <article class="container container--lg section content" id="wiecej-pytan">
+            <h2 class="section__title">Więcej pytań?</h2>
+            <div class="content content--no-gap">
+                <p>Możesz także wziąć udział w dyskusji w komentarzach pod danym postem. To dobre miejsce, gdzie każdy czytający może dorzucić coś od siebie.</p>
+                <p>Na inne programistyczne pytania odpowiedź możesz uzyskać przykładowo na forum informatycznym, na którym często się udzielam —
+                    <a href="https://forum.pasja-informatyki.pl/" rel="noopener">Forum Pasja Informatyki</a>. W miejscach tego typu najprościej będzie otrzymać wsparcie z racji sporej liczby osób, które tam zaglądają, a do tego jeszcze każdy ma inną wiedzę i doświadczenie. Nie zapomnij dokładnie opisać co nie działa, co zrobiłeś, pokazać kodu lub treści błędu, gdy występuje. Przed zapytaniem innych najpierw uważnie przeanalizuj samodzielnie daną kwestię i przeszukaj internet w poszukiwaniu odpowiedzi.</p>
+            </div>
+        </article>
+        <article class="section section--color" id="dane-firmowe">
+            <div class="container container--lg">
+                <h2 class="section__title">Dane firmowe</h2>
+                <div class="content content--no-gap">
+                    <address>
+                        Arkadiusz Waluk waluk.pl<br>
+                        ul. Klaudyny Potockiej 25<br>
+                        60-211 Poznań<br>
+                        NIP: 7792538172<br>
+                        REGON: 521732040
+                    </address>
+                </div>
+            </div>
+        </article>
+    </section>
 {% endblock %}

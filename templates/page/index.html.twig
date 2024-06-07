@@ -1,8 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-{% block description %}{% endblock %}
+{% block title %}Arkadiusz Waluk — programista back-end i PHP, web developer{% endblock %}
+{% block description %}Strona Arkadiusza Waluka, programisty back-end i PHP, web developera. Umiejętności, biografia, blog informatyczny i sposoby kontaktu.{% endblock %}
 
 {% block content %}
+    <section class="container container--lg section index-part">
+        <article class="index-part__container index-part__container--top">
+            <div>
+                <p class="index-part__title">Cześć!</p>
+                <p class="index-part__description">Nazywam się Arkadiusz Waluk. Od kilku lat jestem programistą, <span class="no-break">back-end</span> developerem specjalizującym się w PHP.</p>
+                <a href="{{ url('page_about') }}" class="index-part__button button">O mnie</a>
+            </div>
+            <div class="index-part__image-container">
+                <img src="{{ asset('build/images/index.jpg') }}" alt="" class="index-part__image">
+            </div>
+        </article>
+    </section>
 
+    <section class="section section--color index-part">
+        <div class="container container--lg index-part__container">
+            <article>
+                <h2 class="section__title">Kontakt</h2>
+                <div class="content">
+                    <p>Masz pytania lub sugestię? Chciałbyś wysłać mi propozycję współpracy? Potrzebujesz strony dla siebie lub swojej firmy?</p>
+                </div>
+                <a href="{{ url('page_contact') }}" class="index-part__button button button--center">Napisz do mnie</a>
+            </article>
+            <article>
+                <h2 class="section__title">English</h2>
+                <div class="content">
+                    <p>Don't you speak Polish? I have prepared short summary of information about me in English.</p>
+                </div>
+                <a href="{{ url('page_english') }}" class="index-part__button button button--center">Read more</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="section index-part">
+        <div class="container container--lg">
+            <h2 class="section__title">Ostatnio na blogu</h2>
+            <div class="post-list post-list--small">
+                {% for post in recentPosts %}
+                    <article class="post-preview">
+                        {% if post.main_image_alt %}
+                            <a href="{{ path('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}">
+                                <img src="{{ asset('posts/' ~ post.category_slug ~ '/' ~ post.slug ~ '/thumbnail.jpg') }}" alt="" class="post-preview__image">
+                            </a>
+                        {% endif %}
+                        <p class="post-preview__post-info post-info"><a href="{{ path('blog_category', {categorySlug: post.category_slug}) }}" class="post-info__link">{{ post.category_name }}</a> <span class="post-info__spacer">&bull;</span> {{ post.date|date('d.m.Y') }}</p>
+                        <h2 class="post-preview__title">
+                            <a href="{{ path('blog_post', {categorySlug: post.category_slug, postSlug: post.slug}) }}" class="post-preview__link">{{ post.title }}</a>
+                        </h2>
+                        <p class="post-preview__description">{{ post.description }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+            <a href="{{ url('blog_index') }}" class="index-part__button button button--center">Zobacz więcej</a>
+        </div>
+
+    </section>
 {% endblock %}

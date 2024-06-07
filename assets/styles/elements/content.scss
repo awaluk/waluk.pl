@@ -2,9 +2,14 @@
   font-size: 1.1rem;
   line-height: 1.75rem;
 
-  p, img, .hljs, blockquote, .block, hr {
+  p, img, .hljs, blockquote, .block, hr, address {
     margin-top: $content-spacing;
     margin-bottom: $content-spacing;
+  }
+
+  &--single {
+    margin-top: $content-spacing;
+    margin-bottom: calc($content-spacing / 3);
   }
 
   ul, ol {
@@ -41,20 +46,25 @@
     border-radius: $border-radius;
   }
 
+  address {
+    font-style: normal;
+  }
+
   a {
     color: $primary-color;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color $transition-time ease-in-out;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration-color: $primary-color;
     }
 
     &.content__header-link {
       color: #000;
-      text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration-color: #000;
       }
     }
   }

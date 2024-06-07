@@ -1,15 +1,6 @@
 <footer class="footer">
     <div class="footer__row container container--lg">
-        <ul class="footer__socials socials">
-            <li class="socials__item"><a href="https://www.facebook.com/{{ site.social.facebook }}" class="socials__link" title="Profil na Facebooku" target="_blank"><img src="{{ asset('build/images/facebook.png') }}" alt="Litera f - logo Facebooka" class="socials__icon"></a></li>
-            <li class="socials__item"><a href="https://www.instagram.com/{{ site.social.instagram }}" class="socials__link" title="Profil na Instagramie" target="_blank"><img src="{{ asset('build/images/instagram.png') }}" alt="Ikona aparatu - logo Instagrama" class="socials__icon"></a></li>
-            <li class="socials__item"><a href="https://twitter.com/{{ site.social.x }}" class="socials__link" title="Profil na X" target="_blank"><img src="{{ asset('build/images/x.png') }}" alt="Litera x - logo serwisu X" class="socials__icon"></a></li>
-            <li class="socials__item"><a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" class="socials__link" title="Profil na LinkedIn" target="_blank"><img src="{{ asset('build/images/linkedin.png') }}" alt="Litery in - logo LinkedIn" class="socials__icon"></a></li>
-            <li class="socials__item"><a href="https://github.com/{{ site.social.github }}" class="socials__link" title="Profil na Githubie" target="_blank"><img src="{{ asset('build/images/github.png') }}" alt="Octocat - logo Githuba" class="socials__icon"></a></li>
-            <li class="socials__item"><a href="/blog-rss.xml" class="socials__link" title="Blog - RSS postów" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="socials__icon"><path d="M194.956-120Q164-120 142-142.044q-22-22.045-22-53Q120-226 142.044-248q22.045-22 53-22Q226-270 248-247.956q22 22.045 22 53Q270-164 247.956-142q-22.045 22-53 22ZM710-120q0-123-46-229.5T537-537q-81-81-187.575-127Q242.85-710 120-710v-90q142 0 265 53t216 146q93 93 146 216t53 265h-90Zm-258 0q0-70-25.798-131.478Q400.404-312.956 355-360q-45-47-105.027-73.5Q189.945-460 120-460v-90q89 0 165.5 33.5t133.643 92.425q57.143 58.924 90 137Q542-209 542-120h-90Z"></path></svg>
-            </a></li>
-        </ul>
+        {% include 'parts/socials.html.twig' %}
         <ul class="footer__links links">
             <li class="links__item"><a href="{{ path('page_privacy_policy') }}" class="links__link">Polityka prywatności</a></li>
             <li class="links__item"><a href="{{ path('page_contact') }}" class="links__link">Kontakt</a></li>

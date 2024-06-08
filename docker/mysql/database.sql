@@ -17,3 +17,10 @@ CREATE TABLE posts (
     `content_html` TEXT
 ) ENGINE=InnoDB CHARSET=utf8mb4;
 ALTER TABLE posts ADD CONSTRAINT category_id FOREIGN KEY (category_id) REFERENCES categories(id);
+
+INSERT INTO categories (name, slug, number) VALUES
+    ('PHP', 'php', 1),
+    ('Programowanie', 'programowanie', 2),
+    ('Praca/rozwój', 'praca-rozwoj', 3),
+    ('Sprzęt/sieci', 'sprzet-sieci', 4),
+    ('Po godzinach', 'po-godzinach', 5);

@@ -7,15 +7,16 @@ namespace App\Service;
 use App\Exception\InvalidPostDataException;
 use App\Repository\CategoryRepository;
 use App\Repository\PostRepository;
+use DateTime;
 use League\CommonMark\CommonMarkConverter;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
 
-class PostLoader
+readonly class PostLoader
 {
     public function __construct(
-        private PostRepository $postRepository,
-        private CategoryRepository $categoryRepository,
+        private PostRepository      $postRepository,
+        private CategoryRepository  $categoryRepository,
         private CommonMarkConverter $parser
     ) {
     }
@@ -38,7 +39,7 @@ class PostLoader
 
         $data = [
             'category_id' => $category['id'],
-            'date' => (new \DateTime($meta['date']))->format('Y-m-d H:i:s'),
+            'date' => (new DateTime($meta['date']))->format('Y-m-d H:i:s'),
             'title' => $meta['title'],
             'slug' => $slug,
             'description' => $meta['description'] ?? null,
@@ -50,8 +51,8 @@ class PostLoader
         $post = $this->postRepository->getPost($slug);
         if ($post === null) {
             return $this->postRepository->create($data);
-        } else {
-            return $this->postRepository->update((int)$post['id'], $data);
         }
+
+        return $this->postRepository->update((int) $post['id'], $data);
     }
 }

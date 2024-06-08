@@ -14,14 +14,15 @@ use Symfony\Component\Finder\Finder;
 #[AsCommand(name: 'app:load:posts')]
 class LoadPostsCommand extends Command
 {
-    public function __construct(private PostLoader $loader)
+    public function __construct(private readonly PostLoader $loader, private readonly string $postsPath)
     {
         parent::__construct();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $files = (new Finder())->in('posts/*')->exclude('public')->name('*.md')->files();
+        $in = sprintf('%s/*', $this->postsPath);
+        $files = (new Finder())->in($in)->exclude('public')->name('*.md')->files();
         foreach ($files as $file) {
             $this->loader->fromFile($file);
         }

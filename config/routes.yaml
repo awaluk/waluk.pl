@@ -39,3 +39,7 @@ blog_post:
     requirements:
         categorySlug: '[a-zA-Z0-9-]+'
         postSlug: '[a-zA-Z0-9-]+'
+
+deploy_content:
+    path: /deploy/content
+    controller: App\Controller\DeployController::content

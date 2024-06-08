@@ -21,6 +21,10 @@ parameters:
             open_in_new_window: true
             noreferrer: external
             noopener: external
+    posts_path: '%kernel.project_dir%/posts'
+    sitemap_path: '%kernel.project_dir%/public/sitemap.xml'
+    blog_rss_path: '%kernel.project_dir%/public/blog-rss.xml'
+    deploy_token: '%env(DEPLOY_TOKEN)%'
 
 services:
     # default configuration for services in *this* file
@@ -42,3 +46,17 @@ services:
     League\CommonMark\CommonMarkConverter:
         factory: ['App\Parser\ParserFactory', 'createCommonMark']
         arguments: ['%parser%']
+
+    App\Controller\DeployController:
+        arguments:
+            $deployToken: '%deploy_token%'
+
+    App\Command\LoadPostsCommand:
+        arguments:
+            $postsPath: '%posts_path%'
+    App\Command\BuildSitemapCommand:
+        arguments:
+            $sitemapPath: '%sitemap_path%'
+    App\Command\BuildBlogRSSCommand:
+        arguments:
+            $blogRSSPath: '%blog_rss_path%'

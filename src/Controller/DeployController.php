@@ -22,7 +22,7 @@ class DeployController extends AbstractController
             return $this->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
         }
 
-        $this->deployService->prepareContent();
+        $this->deployService->deployContent();
 
         return $this->json([]);
     }

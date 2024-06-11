@@ -1,6 +1,8 @@
 FROM php:8.3.3-apache AS base
 
-RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends libpq-dev libzip-dev zip unzip git sudo
+RUN apt-get update -yqq
+RUN apt-get install -yqq --no-install-recommends libpq-dev libzip-dev zip unzip git sudo openssh-client
+
 RUN docker-php-ext-install pdo_mysql
 
 COPY docker/www/vhost.conf /etc/apache2/sites-available/000-default.conf

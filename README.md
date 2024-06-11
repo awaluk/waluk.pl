@@ -18,7 +18,11 @@ Page about me with blog
 4. Prepare database, execute `docker/mysql/database.sql` to create initial structure
 5. Prepare `.env.local` based on `.env`
 6. Build image from Dockerfile
-7. Run container with image, expose port 80, mount/copy `.env.local` to container
+7. Run container with image
+   - expose port 80
+   - mount/copy `.env.local` to `/var/www` in container
+   - mount/copy SSH key to `/root/.ssh/` in container
+   - set `CONTENT_REPO_URL` and `CONTENT_REPO_BRANCH` environment variables
 
 ### Development
 1. `docker compose up`

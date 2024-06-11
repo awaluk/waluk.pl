@@ -6,6 +6,7 @@ namespace App\Service;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Process\Process;
 
 readonly class DeployService
 {
@@ -17,7 +18,15 @@ readonly class DeployService
     ) {
     }
 
-    public function prepareContent(): void
+    public function deployContent(): void
+    {
+        $process = new Process(['git', 'pull'], $this->parameterBag->get('posts_path'));
+        $process->mustRun();
+
+        $this->buildContent();
+    }
+
+    private function buildContent(): void
     {
         $in = sprintf('%s/*', $this->parameterBag->get('posts_path'));
         $files = (new Finder())->in($in)->exclude('public')->name('*.md')->files();

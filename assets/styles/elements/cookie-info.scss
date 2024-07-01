@@ -1,0 +1,30 @@
+.cookie-info {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $background-color;
+  border-top: 2px solid $primary-color;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+
+  &__container {
+    padding-top: calc($content-spacing / 2);
+    padding-bottom: calc($content-spacing / 2);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    color: $primary-color;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color $transition-time ease-in-out;
+
+    &:hover {
+      text-decoration-color: $primary-color;
+    }
+  }
+}

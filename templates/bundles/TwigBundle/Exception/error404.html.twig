@@ -4,8 +4,20 @@
 {% block description %}Strona nie została znaleziona.{% endblock %}
 
 {% block content %}
-    <article class="container container--sm container--center section">
-        <h1 class="main__title">{{ block('title') }}</h1>
-        <p>Niestety, szukana strona nie została znaleziona…</p>
+    <article class="section">
+        <div class="container container--lg">
+            <h1 class="main__title">{{ block('title') }}</h1>
+            <div class="content">
+                <p>Niestety, poszukiwana strona nie została znaleziona &#128577;</p>
+                <p>Najwyraźniej pomyliłeś adres lub zawartość zaginęła w tajemniczych okolicznościach. Spróbuj przejść na inną podstronę z górnego menu. Możesz też przeczytać coś na blogu.</p>
+            </div>
+        </div>
     </article>
+
+    <section class="section section--color">
+        <div class="container container--lg">
+            <h2 class="section__title">Ostatnio na blogu</h2>
+            {{ render_latest_posts(3) }}
+        </div>
+    </section>
 {% endblock %}

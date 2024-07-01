@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Polityka prywatności{% endblock %}
+{% block title %}Polityka prywatności i cookies{% endblock %}
 {% block description %}Informacje na temat przetwarzania danych, bezpieczeństwie oraz ciasteczkach używanych na stronie.{% endblock %}
 
 {% block content %}
@@ -8,31 +8,51 @@
         <h1 class="main__title">{{ block('title') }}</h1>
 
         <h2>Informacje ogólne</h2>
-        <p>Niniejszy serwis jest witryną informacyjną wraz z blogiem.</p>
-        <p>Administratorem Twoich danych osobowych oraz osobą zarządzającą witryną jest Arkadiusz Waluk, kontakt: <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+        <p>Niniejsza polityka prywatności i cookies określa zasady przetwarzania i ochrony danych osobowych użytkowników korzystających ze strony internetowej dostępnej pod adresem
+            <a href="{{ url('page_index') }}">{{ url('page_index') }}</a> – dalej <strong>„Serwis”</strong>. Korzystanie z Serwisu jest równoznaczne z akceptacją tego dokumentu.</p>
+        <p>Administratorem Twoich danych osobowych jest: <strong>Arkadiusz Waluk waluk.pl</strong> z siedzibą: ul. Klaudyny Potockiej 25, 60-211 Poznań, NIP: 7792538172, REGON: 521732040, adres e-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a> – dalej <strong>„Administrator”</strong>.</p>
 
         <h2>Bezpieczeństwo danych</h2>
-        <p>Zapewniam, że wszelkie dane osobowe przechowywane są zgodnie z najwyższymi standardami oraz należycie chronione przed dostępem osób nieuprawnionych. Nie będą one nigdy udostępnione bez Twojej wiedzy i zgody (z wyjątkiem obowiązków wynikających z przepisów prawa). Ponadto witryna korzysta z szyfrowania SSL, dzięki któremu wszystkie przesyłane dane pozostają bezpieczne.</p>
+        <p>Administrator zapewnia, że wszelkie dane osobowe przechowywane są zgodnie z najwyższymi standardami oraz należycie chronione przed dostępem osób nieuprawnionych. Nie będą one nigdy udostępnione bez Twojej wiedzy i zgody (z wyjątkiem obowiązków wynikających z przepisów prawa). Witryna korzysta z szyfrowania SSL, dzięki któremu wszystkie przesyłane dane pozostają bezpieczne.</p>
+        <p>Administrator przetwarza dane zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) oraz ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych.</p>
 
-        <h2>Cel przetwarzania danych</h2>
-        <p>W celu dodania komentarza obowiązkowe jest podanie nazwy użytkownika oraz adresu e-mail. Dodatkowo zapisywany jest Twój adres IP. Dane zbierane są w celu weryfikacji i identyfikacji komentarzy, na podstawie artykułu 6 RODO. Przechowywane będą do momentu, gdy Twój komentarz będzie dostępny w serwisie. Podanie danych jest dobrowolne, jednak niezbędne do napisania komentarza. Niniejsze dane osobowe przetwarzane są przez firmę Disqus, Inc.</p>
-        <p>Masz prawo usunięcia swoich danych, co jednak wiąże się z usunięciem napisanego komentarza. W tym celu należy powiadomić mnie o tym fakcie, bądź (jeśli posiadasz) zalogować się na swoje konto Disqus i usunąć wybrany komentarz lub komentarze.</p>
+        <h2>Zbieranie danych</h2>
+        <p>Podczas korzystania z Serwisu, zbierane mogą być następujące dane:</p>
+        <ul>
+            <li>Dane zbierane automatycznie: adres IP, typ przeglądarki, typ urządzenia, system operacyjny, czas wizyty w Serwisie, odwiedzane podstrony – poprzez usługę <strong>Google Analytics od Google LLC</strong>. Informacje te wykorzystywane są do oceny ruchu i aktywności w Serwisie. <a href="https://policies.google.com/privacy?hl=pl" rel="noopener noreferrer">Polityka prywatności Google.</a></li>
+            <li>Dane podawane dobrowolnie: adres e-mail, nazwa użytkownika, adres IP – podawane podczas korzystania z systemu komentarzy <strong>Disqus uruchamianego przez Disqus, Inc</strong>. Dane zbierane są w celu weryfikacji i identyfikacji komentarzy, na podstawie artykułu 6 RODO. Przechowywane będą do momentu, gdy Twój komentarz będzie dostępny w serwisie. Podanie danych jest dobrowolne, jednak niezbędne do napisania komentarza. <a href="https://help.disqus.com/terms-and-policies/disqus-privacy-policy" rel="noopener noreferrer">Polityka prywatności Disqus.</a></li>
+        </ul>
+
+        <h2>Cele przetwarzania danych</h2>
+        <p>Dane osobowe są przetwarzane w celu:</p>
+        <ul>
+            <li>analizowania statystyk i ruchu w Serwisie,</li>
+            <li>umożliwienia użytkownikom komentowania treści w Serwisie.</li>
+        </ul>
+
+        <h2>Twoje prawa</h2>
+        <p>Przysługuje Ci prawo do:</p>
+        <ul>
+            <li>dostępu do Twoich danych osobowych,</li>
+            <li>sprostowania Twoich danych osobowych,</li>
+            <li>usunięcia Twoich danych osobowych,</li>
+            <li>przenoszenia Twoich danych osobowych,</li>
+            <li>ograniczenia przetwarzania Twoich danych osobowych,</li>
+            <li>sprzeciwu wobec przetwarzania Twoich danych osobowych.</li>
+        </ul>
+        <p>W przypadku chęci skorzystania z wymienionych praw należy skontaktować się z Administratorem poprzez adres e-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+        <p>Zgodnie z prawem przysługuje Ci także możliwość złożenia skargi do organu nadzorczego – Urzędu Ochrony Danych Osobowych.</p>
 
         <h2>Pliki cookies</h2>
-        <p>Witryna korzysta z ciasteczek zwanych również cookie, cookies czy plikami cookie. Są one zapisywane na Twoim urządzeniu. Dzięki nim serwis może działać i lepiej dostosowywać się do użytkownika.</p>
+        <p>Serwis korzysta z ciasteczek zwanych również cookie, cookies czy plikami cookie. Są one zapisywane na Twoim urządzeniu. Dzięki nim Serwis może działać i lepiej dostosowywać się do użytkownika.</p>
         <p>Wykorzystywane są w szczególności ciasteczka:</p>
         <ul>
             <li>służące personalizacji witryny, dostosowania wyświetlania komunikatów,</li>
             <li>zbierające statystyki na temat witryny, jak i użytkownika (Google Analytics),</li>
             <li>przechowujące informacje na temat systemu komentarzy (Disqus).</li>
         </ul>
-        <p>Masz prawo nie godzić się na zapisywanie ciasteczek na Twoim urządzeniu. Możesz je usunąć lub zablokować. Miej jednak na uwadze, że może to utrudnić korzystanie ze strony.</p>
+        <p>Masz prawo nie godzić się na zapisywanie ciasteczek na Twoim urządzeniu. Możesz je usunąć lub zablokować. Miej jednak na uwadze, że może to utrudnić lub uniemożliwić korzystanie z Serwisu czy jego elementów.</p>
 
-        <h2>Twoje prawa</h2>
-        <p>W przypadku chęci uzyskania dostępu do danych osobowych, niejasności lub problemów z niniejszą polityką prywatności czy przetwarzaniem danych osobowych zachęcam do kontaktu ze mną poprzez adres e-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. Odpowiadam niezwłocznie, najszybciej jak to możliwe.</p>
-        <p>Pamiętaj, że przysługuje Ci prawo dostępu, sprostowania, przenoszenia oraz usuwania Twoich danych. Możesz ponadto zażądać ich usunięcia, wnieść sprzeciw lub wycofać zgodę na ich przetwarzanie jeśli takowa została udzielona.</p>
-        <p>Zgodnie z prawem zawsze przysługuje Ci także możliwość złożenia skargi do organu nadzorczego - Urzędu Ochrony Danych Osobowych.</p>
-
-        <p><b>Aby uzyskać więcej informacji, zapoznaj się również z <a href="https://policies.google.com/privacy?hl=pl" rel="noopener noreferrer">polityką prywatności usług Google</a> oraz <a href="https://help.disqus.com/terms-and-policies/disqus-privacy-policy" rel="noopener noreferrer">polityką prywatności systemu komentarzy Disqus</a>.</b></p>
+        <p>Polityka prywatności i cookies obowiązuje od dnia 1 lipca 2024 r.</p>
     </div>
 {% endblock %}

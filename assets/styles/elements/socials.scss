@@ -34,7 +34,7 @@
 
   &--color &__icon {
     padding: 7px;
-    background: $primary-color;
+    background: linear-gradient(25deg, $primary-color 0%, $primary-color-light 80%);
     border-radius: $border-radius;
   }
 }

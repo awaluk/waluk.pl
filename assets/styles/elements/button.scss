@@ -1,5 +1,5 @@
 .button {
-  background: $primary-color;
+  background: linear-gradient(25deg, $primary-color 0%, $primary-color-light 80%);
   color: $primary-color-text;
   border-radius: $border-radius;
   padding: 8px 20px;
@@ -7,11 +7,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color $transition-time ease-in-out;
+  transition: opacity $transition-time ease-in-out;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 
   &:hover {
-    color: $primary-color-text;
-    background: lighten($primary-color, 9%);
+    opacity: 0.6;
     border-bottom: none;
   }
 

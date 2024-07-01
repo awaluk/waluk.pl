@@ -8,7 +8,7 @@
   line-height: 1.75rem;
 
   &__item {
-    background: $primary-color;
+    background: linear-gradient(25deg, $primary-color 0%, $primary-color-light 80%);
     color: $primary-color-text;
     padding: 5px 15px;
     margin: 0 8px 8px 0;

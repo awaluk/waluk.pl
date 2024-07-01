@@ -21,16 +21,16 @@
     border-radius: 50%;
 
     &:hover {
-      background: $primary-color;
+      background: linear-gradient(25deg, $primary-color 0%, $primary-color-light 80%);
       color: $primary-color-text;
     }
 
     &--active {
-      background: $primary-color;
+      background: linear-gradient(25deg, $primary-color 0%, $primary-color-light 80%);
       color: $primary-color-text;
 
       &:hover {
-        background: $primary-color;
+        background: linear-gradient(25deg, $primary-color 0%, $primary-color-light 80%);
         color: $primary-color-text;
       }
     }

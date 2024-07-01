@@ -1,21 +1,31 @@
 .index-part {
   &__container {
     display: grid;
-    grid-column-gap: 40px;
+    grid-gap: 40px;
     grid-template-columns: 1fr 1fr;
+
+    @media (max-width: $container-sm + $container-padding) {
+      grid-template-columns: 1fr;
+    }
 
     &--top {
       grid-template-columns: 2fr 1fr;
+
+      @media (max-width: $container-sm + $container-padding) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
   &__image-container {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
   }
 
   &__image {
     max-width: 100%;
-    transform: rotate(3deg);
+    transform: rotate(2deg);
     border-radius: $border-radius;
   }
 
@@ -28,6 +38,13 @@
     font-size: 1.4rem;
     line-height: 1.75rem;
     margin: 35px 0;
+  }
+
+  &__button-container {
+    @media (max-width: $container-sm + $container-padding) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__button {

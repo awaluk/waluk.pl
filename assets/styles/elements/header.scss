@@ -9,14 +9,8 @@
   }
 
   &__logo {
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: $header-color;
-
-    &:hover {
-      color: $header-color;
-    }
+    display: block;
+    height: 40px;
   }
 }
 
@@ -57,6 +51,7 @@
       position: absolute;
       left: 0;
       background: #fff;
+      margin-top: 10px;
       padding: 5px 16px 20px 16px;
       border-bottom: 1px solid darken($secondary-color, 5%);
 

@@ -11,7 +11,6 @@ COPY docker/www/vhost.conf /etc/apache2/sites-enabled/000-default.conf
 RUN a2enmod rewrite headers remoteip
 
 RUN usermod -u 1000 www-data
-RUN chown www-data /var/www
 
 WORKDIR /var/www
 
@@ -43,5 +42,10 @@ COPY templates /var/www/templates
 COPY var /var/www/var
 COPY vendor /var/www/vendor
 COPY composer.json /var/www/composer.json
+
+RUN ssh-keyscan github.com >> /etc/ssh/ssh_known_hosts
+
+RUN chown -R www-data /var/www
+USER www-data
 
 ENTRYPOINT ["/entrypoint.sh"]

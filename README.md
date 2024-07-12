@@ -21,7 +21,7 @@ Page about me with blog
 7. Run container with image
    - expose port 80
    - mount/copy `.env.local` to `/var/www` in container
-   - mount/copy SSH key to `/root/.ssh/` in container
+   - mount/copy SSH key to `/var/www/.ssh/` in container
    - set `CONTENT_REPO_URL` and `CONTENT_REPO_BRANCH` environment variables
 
 ### Development

@@ -5,8 +5,10 @@ RUN apt-get install -yqq --no-install-recommends libpq-dev libzip-dev zip unzip 
 
 RUN docker-php-ext-install pdo_mysql
 
-COPY docker/www/vhost.conf /etc/apache2/sites-available/000-default.conf
-RUN a2enmod rewrite headers
+COPY docker/www/remoteip.conf /etc/apache2/conf-enabled/remoteip.conf
+COPY docker/www/security.conf /etc/apache2/conf-enabled/security.conf
+COPY docker/www/vhost.conf /etc/apache2/sites-enabled/000-default.conf
+RUN a2enmod rewrite headers remoteip
 
 RUN usermod -u 1000 www-data
 RUN chown www-data /var/www

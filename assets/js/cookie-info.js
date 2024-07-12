@@ -4,7 +4,7 @@ const cookieInfoAccept = document.querySelector('#cookie-info-accept');
 if (document.cookie.indexOf('cookies-confirmed=1') < 0) {
     cookieInfo.classList.add('cookie-info--show');
 }
-console.log(document.cookie);
+
 cookieInfoAccept.addEventListener('click', function () {
     cookieInfo.remove();
     const date = new Date();

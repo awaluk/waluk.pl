@@ -19,9 +19,9 @@
     <meta property="og:locale" content="{{ language is defined and language == 'en' ? 'en_US' : 'pl_PL' }}">
     <meta property="twitter:card" content="summary">
     <meta property="twitter:site" content="@{{ site.social.x }}">
-    <link rel="icon" href="{{ absolute_url('favicon.ico') }}" sizes="32x32">
-    <link rel="icon" href="{{ absolute_url('icon.svg') }}" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="{{ absolute_url('apple-touch-icon.png') }}">
+    <link rel="icon" href="{{ absolute_url('/favicon.ico') }}" sizes="32x32">
+    <link rel="icon" href="{{ absolute_url('/icon.svg') }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ absolute_url('/apple-touch-icon.png') }}">
     {{ encore_entry_link_tags('app') }}
     {% if app.environment == 'prod' and site.google_analytics_id is not empty %}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>

@@ -12,7 +12,10 @@ fi
 
 sleep 3
 
-php bin/console app:load:posts
+php bin/console cache:clear
+if [ -d "/var/www/posts" ]; then
+  php bin/console app:load:posts
+fi
 php bin/console app:build:blog-rss
 php bin/console app:build:sitemap
 

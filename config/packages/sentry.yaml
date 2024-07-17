@@ -7,6 +7,10 @@ when@prod:
         tracing:
             enabled: false
 
+        options:
+            ignore_exceptions:
+                - "Symfony\\Component\\HttpKernel\\Exception\\HttpException"
+
 #        If you are using Monolog, you also need this additional configuration to log the errors correctly:
 #        https://docs.sentry.io/platforms/php/guides/symfony/#monolog-integration
 #        register_error_listener: false

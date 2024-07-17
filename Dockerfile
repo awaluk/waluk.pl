@@ -1,11 +1,12 @@
 FROM php:8.3.3-apache AS base
 
+ENV TZ=Europe/Warsaw
 RUN apt-get update -yqq
 RUN apt-get install -yqq --no-install-recommends libpq-dev libzip-dev zip unzip git sudo openssh-client
 
 RUN docker-php-ext-install pdo_mysql
 
-COPY docker/www/remoteip.conf /etc/apache2/conf-enabled/remoteip.conf
+COPY docker/www/apache2.conf /etc/apache2/apache2.conf
 COPY docker/www/security.conf /etc/apache2/conf-enabled/security.conf
 COPY docker/www/vhost.conf /etc/apache2/sites-enabled/000-default.conf
 RUN a2enmod rewrite headers remoteip

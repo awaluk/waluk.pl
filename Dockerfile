@@ -1,4 +1,4 @@
-FROM php:8.3.3-apache AS base
+FROM php:8.5.12-apache AS base
 
 ENV TZ=Europe/Warsaw
 RUN apt-get update -yqq

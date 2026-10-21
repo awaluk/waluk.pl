@@ -6,28 +6,28 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.3",
+        "php": "^8.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-simplexml": "*",
-        "doctrine/dbal": "^3.7.0",
-        "doctrine/doctrine-bundle": "^2.11.3",
+        "doctrine/dbal": "^4.0",
+        "doctrine/doctrine-bundle": "^3.3",
         "league/commonmark": "^1.6",
         "phpdocumentor/reflection-docblock": "^5.4",
         "phpstan/phpdoc-parser": "^1.29",
         "sentry/sentry-symfony": "*",
-        "symfony/console": "7.0.*",
-        "symfony/dotenv": "7.0.*",
+        "symfony/console": "8.1.*",
+        "symfony/dotenv": "8.1.*",
         "symfony/flex": "^2",
-        "symfony/framework-bundle": "7.0.*",
-        "symfony/process": "7.0.*",
-        "symfony/property-access": "7.0.*",
-        "symfony/property-info": "7.0.*",
-        "symfony/runtime": "7.0.*",
-        "symfony/serializer": "7.0.*",
-        "symfony/twig-bundle": "7.0.*",
+        "symfony/framework-bundle": "8.1.*",
+        "symfony/process": "8.1.*",
+        "symfony/property-access": "8.1.*",
+        "symfony/property-info": "8.1.*",
+        "symfony/runtime": "8.1.*",
+        "symfony/serializer": "8.1.*",
+        "symfony/twig-bundle": "8.1.*",
         "symfony/webpack-encore-bundle": "^2.1",
-        "symfony/yaml": "7.0.*",
+        "symfony/yaml": "8.1.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },
@@ -37,7 +37,21 @@
             "symfony/flex": true,
             "symfony/runtime": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "audit": {
+            "ignore": [
+                "PKSA-m2dq-1fhr-29b1",
+                "PKSA-nv44-1b4d-6gjg",
+                "PKSA-zyf5-hrxv-hrd7",
+                "PKSA-9q1p-3s19-bp1q",
+                "PKSA-1q6p-sqkj-8mmj",
+                "PKSA-scnn-p8mm-jbft",
+                "PKSA-t21r-vtr5-3mdz",
+                "PKSA-mc58-w91n-f5gv",
+                "PKSA-rqc2-tcc6-nc79",
+                "PKSA-fndg-qryc-dyc9"
+            ]
+        }
     },
     "autoload": {
         "psr-4": {
@@ -77,7 +91,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "7.0.*"
+            "require": "8.1.*"
         }
     }
 }

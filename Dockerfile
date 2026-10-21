@@ -30,7 +30,7 @@ FROM dev AS prod-build
 ENV SYMFONY_ENV=prod
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-RUN docker-php-ext-install opcache
+COPY docker/www/production.ini "$PHP_INI_DIR/production.ini"
 
 COPY assets /var/www/assets
 COPY bin /var/www/bin
@@ -57,7 +57,7 @@ FROM base AS prod
 ENV SYMFONY_ENV=prod
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-RUN docker-php-ext-install opcache
+COPY docker/www/production.ini "$PHP_INI_DIR/production.ini"
 
 COPY --from=prod-build /var/www/bin /var/www/bin
 COPY --from=prod-build /var/www/config /var/www/config
